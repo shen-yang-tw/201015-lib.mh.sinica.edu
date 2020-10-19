@@ -1,0 +1,49 @@
+<h3>{{h3Title}}</h3>
+{{>searchBox placeholder='請輸入關鍵字' select='true' select1='true' select2='true'}}
+<small class="mt-2">中文新到館藏 (共計<span>466</span>筆)</small>
+<table class="uk-table uk-table-small uk-table-striped uk-table-responsive">
+	<thead>
+		<tr>
+			<th class="uk-text-nowrap">項次</th>
+			<th class="uk-text-nowrap">圖片</th>
+			<th class="w-1/6 uk-text-nowrap">書名</th>
+			<th class="uk-text-nowrap">作者</th>
+			<th class="uk-text-nowrap">出版社</th>
+			<th class="uk-text-nowrap">索書號</th>
+			<th class="uk-text-nowrap">ISBN</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>01</td>
+			<td><img data-src="https://fakeimg.pl/90x120/" width="90" height="120" alt="" uk-img></td>
+			<td>
+				{{!-- <i class="color_secondary mr-1 fas fa-star"></i> --}}
+				<a class="color_primary hover:underline" href="#">
+					中化公會路不真雙林一形必生部
+				</a>
+			</td>
+			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">作者</span>Justin Baldoni</td>
+			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">出版社</span>采昌國際多媒體</td>
+			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">索書號</span><time>202.00 9201 2020</time>
+			</td>
+			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">ISBN</span>9789865024864</td>
+		</tr>
+		<tr>
+			<td>02</td>
+			<td><img data-src="img/book.svg" width="90" height="120" alt="" uk-img></td>
+			<td>
+				{{!-- <i class="color_secondary mr-1 fas fa-star"></i> --}}
+				<a class="color_primary hover:underline" href="#">
+					中化公會路不真雙林一形必生部
+				</a>
+			</td>
+			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">作者</span>Justin Baldoni</td>
+			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">出版社</span>采昌國際多媒體</td>
+			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">索書號</span><time>202.00 9201 2020</time>
+			</td>
+			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">ISBN</span>9789865024864</td>
+		</tr>
+	</tbody>
+</table>
+{{>pagination pageArrowText='true' pageSelect='true' pageSum='2'}}

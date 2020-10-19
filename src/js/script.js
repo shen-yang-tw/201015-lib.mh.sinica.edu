@@ -1,8 +1,8 @@
 //Check all exist
 function allExist(el) {
   var exist = true
-  k = document.querySelectorAll(el);
-  for (var i = 0; i < k.length; i++) {
+  k = document.querySelectorAll(el)
+  for (var i = 0;i < k.length;i++) {
     if (k[i] == null) {
       exist = false
       return exist
@@ -16,8 +16,8 @@ function allExist(el) {
 //Check one exist
 function oneExist(el) {
   var exist = true
-  k = document.querySelectorAll(el);
-  for (var i = 0; i < k.length; i++) {
+  k = document.querySelectorAll(el)
+  for (var i = 0;i < k.length;i++) {
     if (k[i] != null) {
       return exist
     } else {
@@ -44,7 +44,7 @@ function hide(el) {
 //Add Class to all
 function AddClass(el, className) {
   var _el = document.querySelectorAll(el)
-  for (var i = 0; i < _el.length; i++) {
+  for (var i = 0;i < _el.length;i++) {
     _el[i].classList.add(className)
   }
 }
@@ -52,7 +52,7 @@ function AddClass(el, className) {
 //Remove Class to all
 function RemoveClass(el, className) {
   var _el = document.querySelectorAll(el)
-  for (var i = 0; i < _el.length; i++) {
+  for (var i = 0;i < _el.length;i++) {
     _el[i].classList.remove(className)
   }
 }
@@ -60,7 +60,7 @@ function RemoveClass(el, className) {
 //Remove & Add Class to all by selector
 function RemoveAddClass(el, classRemove, classAdd) {
   var _el = document.querySelectorAll(el)
-  for (var i = 0; i < _el.length; i++) {
+  for (var i = 0;i < _el.length;i++) {
     if (classRemove != '') {
       _el[i].classList.remove(classRemove)
     }
@@ -73,7 +73,7 @@ function RemoveAddClass(el, classRemove, classAdd) {
 //Remove & Add Class to all by element
 function RemoveAddClassByElement(el, classRemove, classAdd) {
   // var _el = document.querySelectorAll(el)
-  for (var i = 0; i < el.length; i++) {
+  for (var i = 0;i < el.length;i++) {
     if (classRemove != '') {
       el[i].classList.remove(classRemove)
     }
@@ -86,7 +86,7 @@ function RemoveAddClassByElement(el, classRemove, classAdd) {
 //Remove all by selector
 function removeAll(sel) {
   var target = document.querySelectorAll(sel)
-  for (var i = 0; i < target.length; i++) {
+  for (var i = 0;i < target.length;i++) {
     target[i].parentNode.removeChild(target[i])
   }
 }
@@ -105,7 +105,7 @@ function toggleShow(thisElement) {
 function toggleAllShow(allChildren) {
   //if (elID.getAttribute("aria-hidden") == "true"))
   console.log(allChildren.length)
-  for (var i = 0; i < allChildren.length; i++) {
+  for (var i = 0;i < allChildren.length;i++) {
     if (allChildren[i].hasAttribute('hidden')) {
       allChildren[i].removeAttribute('hidden')
     } else {
@@ -117,7 +117,7 @@ function toggleAllShow(allChildren) {
 //toggle all class by array - onclick="toggleAllClass(findChildren(findParent(this, 'LI', ''), '.detail'), 'hidden'); return false;"
 //return false - avoid the page jumping straight to the top"
 function toggleAllClass(allChildren, cls1, cls2) {
-  for (var i = 0; i < allChildren.length; i++) {
+  for (var i = 0;i < allChildren.length;i++) {
     allChildren[i].classList.toggle(cls1)
     if (cls2 != null) {
       allChildren[i].classList.toggle(cls2)
@@ -127,7 +127,7 @@ function toggleAllClass(allChildren, cls1, cls2) {
 }
 //toggle two classes - onmouseover="removeAddClasses(findChildren(findParent(this, 'LI', ''), 'p'), 'uk-text-truncate', 'flex-wrap')" onmouseout="removeAddClasses(findChildren(findParent(this, 'LI', ''), 'p'), 'flex-wrap', 'uk-text-truncate')"
 function removeAddClasses(allChildren, classRemove, classAdd) {
-  for (var i = 0; i < allChildren.length; i++) {
+  for (var i = 0;i < allChildren.length;i++) {
     allChildren[i].classList.remove(classRemove)
     allChildren[i].classList.add(classAdd)
   }
@@ -213,7 +213,7 @@ function viewHeight(sel, upperSelector) {
       document.querySelector(upperSelector).getBoundingClientRect().top +
       document.querySelector(upperSelector).getBoundingClientRect().height
     var target = document.querySelectorAll(sel)
-    for (var i = 0; i < target.length; i++) {
+    for (var i = 0;i < target.length;i++) {
       target[i].style.maxHeight = window.innerHeight - topHeight + 'px'
     }
   }
@@ -243,7 +243,7 @@ function sameHeight(sel, target1, target2) {
 
 //Triger Click event
 function OnClick(el) {
-  document.querySelector(el).click();
+  document.querySelector(el).click()
 }
 
 //------------- font resize ------------------------------------------------//
@@ -258,31 +258,31 @@ function fontResize(
 ) {
   if (
     document
-    .querySelector('.' + classButtonFontS)
-    .classList.contains(classActive)
+      .querySelector('.' + classButtonFontS)
+      .classList.contains(classActive)
   ) {
     document.querySelector('html').classList.remove(classFontM)
     document.querySelector('html').classList.remove(classFontL)
   }
   if (
     document
-    .querySelector('.' + classButtonFontM)
-    .classList.contains(classActive)
+      .querySelector('.' + classButtonFontM)
+      .classList.contains(classActive)
   ) {
     document.querySelector('html').classList.remove(classFontL)
     document.querySelector('html').classList.add(classFontM)
   }
   if (
     document
-    .querySelector('.' + classButtonFontL)
-    .classList.contains(classActive)
+      .querySelector('.' + classButtonFontL)
+      .classList.contains(classActive)
   ) {
     document.querySelector('html').classList.remove(classFontM)
     document.querySelector('html').classList.add(classFontL)
   }
   var btnFont = document.querySelectorAll('.' + classButtonFont)
-  for (var i = 0; i < btnFont.length; i++) {
-    btnFont[i].onclick = function() {
+  for (var i = 0;i < btnFont.length;i++) {
+    btnFont[i].onclick = function () {
       RemoveClass('.' + classButtonFont, classActive) //Outer function
       this.classList.add(classActive) //Error: Cannot use 'btnFont[i]' to replace 'this'
       if (this.classList.contains(classButtonFontS)) {
@@ -311,36 +311,39 @@ function showOption(thisSelect, index, sl) {
   var showEl = document.querySelectorAll(sl)
   var i
   if (thisSelect.selectedIndex == index) {
-    for (i = 0; i < showEl.length; i++) {
+    for (i = 0;i < showEl.length;i++) {
       showEl[i].style.setProperty('display', 'block', 'important')
     }
   } else {
-    for (i = 0; i < showEl.length; i++) {
+    for (i = 0;i < showEl.length;i++) {
       showEl[i].style.setProperty('display', 'none', 'important')
     }
   }
 }
 
 //--Checkbox toggle check all - <input type="checkbox" onchange="toggleCheckAll(this, '.listCheck')"> or <button onclick="toggleCheckAll(this, '.listCheck')">
-function toggleCheckAll(thisClick, inputClass) {
+function toggleCheckAll(thisClick, inputClass, addChecked) {
   //thisClick means the "owner" and CANNOT use "this" that means the Global object "Window"
   thisClick.classList.toggle('checked')
-  var i,
-    el = document.querySelectorAll(inputClass)
+  var i, el = document.querySelectorAll(inputClass), addChecked = false
   //--set all input checked & unchecked--
   if (thisClick.classList.contains('checked')) {
     //if 'select all' checked
-    for (i = 0; i < el.length; i++) {
+    for (i = 0;i < el.length;i++) {
       el[i].checked = true
-      el[i].offsetParent.classList.add('checked')
-      //parent el<li> add class "checked" when input checked
+      if (addChecked == true) {
+        el[i].offsetParent.classList.add('checked')
+        //parent el<li> add class "checked" when input checked
+      }
     }
   } else {
     //if 'select all' unchecked
-    for (i = 0; i < el.length; i++) {
+    for (i = 0;i < el.length;i++) {
       el[i].checked = false
-      el[i].offsetParent.classList.remove('checked')
-      //parent el<li> remove class "checked" when input unchecked
+      if (addChecked == true) {
+        el[i].offsetParent.classList.remove('checked')
+        //parent el<li> remove class "checked" when input unchecked
+      }
     }
   }
 }
@@ -351,7 +354,7 @@ function toggleCheckAll(thisClick, inputClass) {
 function slideShowFocus(slideshow, tabsArray, thisFocus) {
   var slideshow = document.querySelector(slideshow)
   var tabs = document.querySelectorAll(tabsArray)
-  for (var i = 0; i < tabs.length; i++) {
+  for (var i = 0;i < tabs.length;i++) {
     // tabs[i] = UIkit.slideshow(slideshow).show(i)
     if (thisFocus == tabs[i]) {
       UIkit.slideshow(slideshow).show(i)
@@ -381,8 +384,8 @@ function urlShowTab(ukTab) {
 //Click a link to show a tab by the 'index' [[in the same page]]
 function listShowTab(link, ukTab) {
   var links = document.querySelectorAll(link)
-  for (var i = 0; i < links.length; i++) {
-    links[i].onclick = function() {
+  for (var i = 0;i < links.length;i++) {
+    links[i].onclick = function () {
       // const list = this.parentElement.parentElement.children
       // const index = list.indexOf(this.parentElement) //It got error
       //With ES6 destructuring you can do as below:
@@ -393,7 +396,7 @@ function listShowTab(link, ukTab) {
 }
 
 function logoSvg(logoSvg) {
-  UIkit.svg(logoSvg).svg.then(function(svg) {
+  UIkit.svg(logoSvg).svg.then(function (svg) {
     svg.setAttribute("preserveAspectRatio", "xMinYMid")
   })
 }
@@ -404,20 +407,20 @@ if (oneExist("p:empty, h1:empty, h2:empty, h3:empty, h4:empty, h5:empty, h6:empt
 
 if (oneExist("#gototop") == true) {
   gotoTop("#gototop", "opacity-100")
-  window.onscroll = function() {
+  window.onscroll = function () {
     gotoTop("#gototop", "opacity-100")
-  };
+  }
 }
 
 if (oneExist(".text_size") == true) {
-  fontResize("text-m", "text-l", "text_size", "text_size-s", "text_size-m", "text_size-l", "active");
+  fontResize("text-m", "text-l", "text_size", "text_size-s", "text_size-m", "text_size-l", "active")
 }
 
 //The two functions below must be togther
-urlShowTab(".border2.uk-tab")
-listShowTab(".nav_bar .uk-dropdown .uk-nav-sub>li>a", ".border2.uk-tab")
+// urlShowTab(".border2.uk-tab")
+// listShowTab(".nav_bar .uk-dropdown .uk-nav-sub>li>a", ".border2.uk-tab")
 
-logoSvg(".logo [uk-svg]");
+logoSvg(".logo [uk-svg]")
 
 // if (allExist(".logo_cht, logo_eng") == true) {
 //   var fitText = require("FitText-UMD");
@@ -448,12 +451,12 @@ logoSvg(".logo [uk-svg]");
 //"DOMContentLoaded" signifies that the HTML body is completely loaded and parsed. The JavaScript inside this block will not run until after that event is fired, therefore the error is avoided
 //In the external case as below, doesn't need to use the "DOMContentLoaded" event because the "defer" attribute solved the problem
 //<script src="script.js" defer></script>
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
-});
+})
 
 //uk-slideshow height, working with CSS {min-height: auto !important}
-window.onload = function() {
+window.onload = function () {
   // viewHeightMiddle('#slideshow .uk-slideshow-items', 'header', '.bg_bar')
   // if (allExist(['.bg_menu', '.bg_menu~section:nth-of-type(1)', '.bg_menu~section:nth-of-type(2)']) == true) {
   //   sameHeight('.bg_menu', '.bg_menu~section:nth-of-type(1)', '.bg_menu~section:nth-of-type(2)')
@@ -466,7 +469,7 @@ window.onload = function() {
   //   toggleAllClass(findAll('.list_tabs .uk-open .toggle'), 'hidden')
   // }
 }
-window.onresize = function() {
+window.onresize = function () {
   // viewHeightMiddle('#slideshow .uk-slideshow-items', 'header', '.bg_bar')
   // if (allExist(['.bg_menu', '.bg_menu~section:nth-of-type(1)', '.bg_menu~section:nth-of-type(2)']) == true) {
   //   sameHeight('.bg_menu', '.bg_menu~section:nth-of-type(1)', '.bg_menu~section:nth-of-type(2)')
