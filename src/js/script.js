@@ -114,6 +114,14 @@ function toggleAllShow(allChildren) {
   }
 }
 
+//toggle all class by selector
+function toggleClasses(el, cls) {
+  var all = document.querySelectorAll(el)
+  for (var i = 0;i < all.length;i++) {
+    all[i].classList.toggle(cls)
+  }
+}
+
 //toggle all class by array - onclick="toggleAllClass(findChildren(findParent(this, 'LI', ''), '.detail'), 'hidden'); return false;"
 //return false - avoid the page jumping straight to the top"
 function toggleAllClass(allChildren, cls1, cls2) {
@@ -322,27 +330,133 @@ function showOption(thisSelect, index, sl) {
 }
 
 //--Checkbox toggle check all - <input type="checkbox" onchange="toggleCheckAll(this, '.listCheck')"> or <button onclick="toggleCheckAll(this, '.listCheck')">
-function toggleCheckAll(thisClick, inputClass, addChecked) {
+function toggleCheckAll(thisClick, inputClass) {
   //thisClick means the "owner" and CANNOT use "this" that means the Global object "Window"
   thisClick.classList.toggle('checked')
-  var i, el = document.querySelectorAll(inputClass), addChecked = false
+  var i, el = document.querySelectorAll(inputClass)
   //--set all input checked & unchecked--
   if (thisClick.classList.contains('checked')) {
     //if 'select all' checked
     for (i = 0;i < el.length;i++) {
       el[i].checked = true
-      if (addChecked == true) {
-        el[i].offsetParent.classList.add('checked')
-        //parent el<li> add class "checked" when input checked
-      }
+      el[i].offsetParent.classList.add('checked')
+      //parent el<li> add class "checked" when input checked
     }
   } else {
     //if 'select all' unchecked
     for (i = 0;i < el.length;i++) {
       el[i].checked = false
-      if (addChecked == true) {
-        el[i].offsetParent.classList.remove('checked')
-        //parent el<li> remove class "checked" when input unchecked
+      el[i].offsetParent.classList.remove('checked')
+      //parent el<li> remove class "checked" when input unchecked
+    }
+  }
+}
+
+// checkedSum(".listCheck", ".checkAll", ".uncheckAll", ".checkedNumber")
+function checkedSum(inputCheck, checkAll, resetButton, textSum) {
+  var checkAll = document.querySelectorAll(checkAll)
+  var resetButton = document.querySelectorAll(resetButton)
+  var inputCheck = document.querySelectorAll(inputCheck)
+  var textSum = document.querySelectorAll(textSum)
+  var sum = 0
+  textSum.innerHTML = sum
+
+  // function checkAllSum() {
+  //   for (var j = 0; j < inputCheck.length; j++) {
+  //     inputCheck[j].checked = true
+  //     sum = sum + 1
+  //   }
+  //   for (var k = 0; k < textSum.length; k++) {
+  //     textSum.innerHTML = sum
+  //   }
+  // }
+
+  for (var i = 0;i < inputCheck.length;i++) {
+    inputCheck[i].addEventListener('change', (event) => {
+      if (event.target.checked) {
+        sum = sum + 1
+        for (var j = 0;j < textSum.length;j++) {
+          textSum[j].innerHTML = sum
+        }
+      } else {
+        sum = sum - 1
+        for (var k = 0;k < textSum.length;k++) {
+          textSum[k].innerHTML = sum
+        }
+      }
+    })
+  }
+  for (var i = 0;i < checkAll.length;i++) {
+    if (checkAll[i].getAttribute('type') == 'checkbox') {
+      checkAll[i].addEventListener('change', (event) => {
+        if (event.target.checked) {
+          for (var i = 0;i < checkAll.length;i++) {
+            checkAll[i].checked = true
+          }
+          for (var j = 0;j < inputCheck.length;j++) {
+            inputCheck[j].checked = true
+            // sum = sum + 1
+          }
+          sum = inputCheck.length
+          for (var k = 0;k < textSum.length;k++) {
+            textSum[k].innerHTML = sum
+          }
+        } else {
+          for (var i = 0;i < checkAll.length;i++) {
+            checkAll[i].checked = false
+          }
+          for (var j = 0;j < inputCheck.length;j++) {
+            inputCheck[j].checked = false
+            // sum = sum - 1
+          }
+          sum = 0
+          for (var k = 0;k < textSum.length;k++) {
+            textSum[k].innerHTML = sum
+          }
+        }
+      })
+    }
+    if (checkAll[i].getAttribute('type') == 'button') {
+      checkAll[i].onclick = function () {
+        if (checkAll[i].classList.contains('checked')) {
+          for (var i = 0;i < checkAll.length;i++) {
+            checkAll[i].classList.toggle('checked')
+          }
+          for (var j = 0;j < inputCheck.length;j++) {
+            inputCheck[j].checked = true
+            // sum = sum + 1
+          }
+          sum = inputCheck.length
+          for (var k = 0;k < textSum.length;k++) {
+            textSum[k].innerHTML = sum
+          }
+        } else {
+          for (var i = 0;i < checkAll.length;i++) {
+            checkAll[i].classList.toggle('checked')
+          }
+          for (var j = 0;j < inputCheck.length;j++) {
+            inputCheck[j].checked = false
+            // sum = sum - 1
+          }
+          sum = 0
+          for (var k = 0;k < textSum.length;k++) {
+            textSum[k].innerHTML = sum
+          }
+        }
+      }
+    }
+  }
+  for (var i = 0;i < resetButton.length;i++) {
+    resetButton[i].onclick = function () {
+      for (var j = 0;j < checkAll.length;j++) {
+        checkAll[j].checked = false
+      }
+      for (var k = 0;k < inputCheck.length;k++) {
+        inputCheck[k].checked = false
+      }
+      sum = 0
+      for (var l = 0;l < textSum.length;l++) {
+        textSum[l].innerHTML = sum
       }
     }
   }
@@ -396,8 +510,10 @@ function listShowTab(link, ukTab) {
 }
 
 function logoSvg(logoSvg) {
-  UIkit.svg(logoSvg).svg.then(function (svg) {
-    svg.setAttribute("preserveAspectRatio", "xMinYMid")
+  var logo = document.querySelector(logoSvg)
+  UIkit.svg(logo).svg.then(function (svg) {
+    // svg.setAttribute("preserveAspectRatio", "xMinYMid")
+    svg.querySelector('path').style.stroke = 'red'
   })
 }
 
@@ -416,11 +532,18 @@ if (oneExist(".text_size") == true) {
   fontResize("text-m", "text-l", "text_size", "text_size-s", "text_size-m", "text_size-l", "active")
 }
 
+if (allExist([".listCheck", ".checkAll", ".uncheckAll", ".checkedNumber"]) == true) {
+  checkedSum(".listCheck", ".checkAll", ".uncheckAll", ".checkedNumber")
+}
+
 //The two functions below must be togther
 // urlShowTab(".border2.uk-tab")
 // listShowTab(".nav_bar .uk-dropdown .uk-nav-sub>li>a", ".border2.uk-tab")
 
-logoSvg(".logo [uk-svg]")
+if (oneExist('img[data-src*=".svg"]') == true) {
+  // console.log("The logo exists")
+  logoSvg(".logo>img")
+}
 
 // if (allExist(".logo_cht, logo_eng") == true) {
 //   var fitText = require("FitText-UMD");

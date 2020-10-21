@@ -41,8 +41,6 @@ var paths = {
   vendors: {
     css: ['node_modules/uikit/dist/css/uikit.min.css'],
     js: ['node_modules/uikit/dist/js/uikit.min.js', 'node_modules/uikit/dist/js/uikit-icons.min.js'],
-    // css: ['node_modules/uikit/dist/css/uikit.min.css', 'node_modules/ion-rangeslider/css/ion.rangeSlider.min.css'],
-    // js: ['node_modules/jquery/dist/jquery.min.js', 'node_modules/uikit/dist/js/uikit.min.js', 'node_modules/uikit/dist/js/uikit-icons.min.js', 'node_modules/ion-rangeslider/js/ion.rangeSlider.min.js'],
     // js: ['node_modules/uikit/dist/js/uikit.min.js', 'node_modules/uikit/dist/js/uikit-icons.min.js', 'node_modules/FitText-UMD/fittext.js'], //FitText
     fontawesome: ['node_modules/@fortawesome/fontawesome-free/css/all.min.css'],
     fonts: 'node_modules/@fortawesome/fontawesome-free/webfonts/*',
@@ -154,7 +152,7 @@ gulp.task('copyjs', function() {
 gulp.task('copycss', function() {
   return gulp.src(paths.vendors.css)
     // Find digits between "font-size:" and "px" in Visual Studio Code using: "font-size:(\d+)px" or "font-size:\s+(\d+)px"
-    //\d+ means one or more digits, \s+ means one or more whitespaces
+    //\d+ means one or more digits, \s means one or more whitespaces
     .pipe(replace('font-size:12px', 'font-size:calc(12rem/16)'))
     .pipe(replace('font-size:16px', 'font-size:calc(16rem/16)'))
     .pipe(replace('font-size:500px', 'font-size:calc(500rem/16)'))
@@ -179,7 +177,7 @@ gulp.task('copyfonts', function() {
 //gulp.task('templates', async function(){}): It must need the 'async' or get error 'Did you forget to signal async completion?'
 gulp.task('templates', async function() {
   var templateData = {
-      title: '中研院近史所圖書館'
+      title: '長庚科技大學圖書資訊處-圖書推薦系統'
     },
     options = {
       batch: [paths.src.root + paths.dist.templates + '/partials'],
@@ -191,6 +189,11 @@ gulp.task('templates', async function() {
       extname: ".html"
     }))
     .pipe(gulp.dest(paths.src.root))
+});
+
+// clean dist and keep the directory
+gulp.task('delhtml', function() {
+  return del([paths.src.root + '*.html']);
 });
 
 // inject css & js to html - https://www.npmjs.com/package/gulp-inject#method-2-use-gulp-inject-s-name-option
@@ -244,19 +247,21 @@ gulp.task('inject', function() {
       name: 'style2',
       relative: true
     }))
-    .pipe(inject(gulp.src([paths.src.root + paths.dist.js + '/jquery*.js', paths.src.root + paths.dist.css + '/ion*.css'], {
+    .pipe(inject(gulp.src([paths.src.root + paths.dist.css + '/*.css', '!' + paths.src.root + paths.dist.css + '/ui*.css', '!' + paths.src.root + paths.dist.css + '/ta*.css', '!' + paths.src.root + paths.dist.css + '/font*.css', '!' + paths.src.root + paths.dist.css + '/main*.css', '!' + paths.src.root + paths.dist.css + '/colors*.css', '!' + paths.src.root + paths.dist.css + '/style*.css'], {
+      read: false
+    }), {
+      relative: true
+    }))
+    .pipe(inject(gulp.src([paths.src.root + paths.dist.js + '/script.js'], {
       read: false
     }), {
       name: 'head',
-      relative: true
+      relative: true,
+      transform: function(filepath) {
+        return '<script src="' + filepath + '" defer>' + '</script>';
+      }
     }))
-    // .pipe(inject(gulp.src([paths.src.root + paths.dist.css + '/ion*.css'], {
-    //   read: false
-    // }), {
-    //   name: 'head',
-    //   relative: true
-    // }))
-    .pipe(inject(gulp.src([paths.src.root + paths.dist.js + '/*.js', '!' + paths.src.root + paths.dist.js + '/jquery*.js', '!' + paths.src.root + paths.dist.js + '/ui*.js'], {
+    .pipe(inject(gulp.src([paths.src.root + paths.dist.js + '/*.js', '!' + paths.src.root + paths.dist.js + '/script*.js', '!' + paths.src.root + paths.dist.js + '/jquery*.js', '!' + paths.src.root + paths.dist.js + '/ui*.js', '!' + paths.src.root + paths.dist.js + '/*-i.js'], {
       read: false
     }), {
       relative: true,
@@ -318,13 +323,21 @@ gulp.task('build-inject', function() {
       name: 'style2',
       relative: true
     }))
-    .pipe(inject(gulp.src([paths.dist.root + paths.dist.js + '/jquery*.js', paths.dist.root + paths.dist.css + '/ion*.css'], {
+    .pipe(inject(gulp.src([paths.dist.root + paths.dist.css + '/*.css', '!' + paths.dist.root + paths.dist.css + '/ui*.css', '!' + paths.dist.root + paths.dist.css + '/ta*.css', '!' + paths.dist.root + paths.dist.css + '/font*.css', '!' + paths.dist.root + paths.dist.css + '/main*.css', '!' + paths.dist.root + paths.dist.css + '/colors*.css', '!' + paths.dist.root + paths.dist.css + '/style*.css'], {
+      read: false
+    }), {
+      relative: true
+    }))
+    .pipe(inject(gulp.src([paths.dist.root + paths.dist.js + '/script*.js'], {
       read: false
     }), {
       name: 'head',
-      relative: true
+      relative: true,
+      transform: function(filepath) {
+        return '<script src="' + filepath + '" defer>' + '</script>';
+      }
     }))
-    .pipe(inject(gulp.src([paths.dist.root + paths.dist.js + '/*.js', '!' + paths.dist.root + paths.dist.js + '/jquery*.js', '!' + paths.dist.root + paths.dist.js + '/ui*.js'], {
+    .pipe(inject(gulp.src([paths.dist.root + paths.dist.js + '/*.js', '!' + paths.dist.root + paths.dist.js + '/script*.js', '!' + paths.dist.root + paths.dist.js + '/jquery*.js', '!' + paths.dist.root + paths.dist.js + '/ui*.js', '!' + paths.dist.root + paths.dist.js + '/*-i.js'], {
       read: false
     }), {
       relative: true,
@@ -419,7 +432,7 @@ gulp.task('css', function() {
 
 // Minify + Combine JS
 gulp.task('js', function() {
-  return gulp.src([paths.src.js, '!' + paths.src.root + paths.dist.js + '/ui*.js'])
+  return gulp.src([paths.src.js, '!' + paths.src.root + paths.dist.js + '/*.min.js', '!' + paths.src.root + paths.dist.js + '/*-i.js', '!' + paths.src.root + paths.dist.js + '/*-bak.js'])
     // .pipe(mode.production(
     //   autopolyfiller('script_polyfill.js', {
     //     browsers: require('autoprefixer').default
@@ -482,11 +495,6 @@ gulp.task('clean', function() {
   return del(['dist/**', '!dist']);
 });
 
-// clean dist and keep the directory
-gulp.task('delhtml', function() {
-  return del([paths.src.root + '*.html']);
-});
-
 // Watch (SASS, CSS, JS, and HTML) reload browser on change
 gulp.task('watch', function() {
   browserSync.init({
@@ -499,7 +507,7 @@ gulp.task('watch', function() {
   gulp.watch(paths.src.js).on('change', browserSync.reload);
   // gulp.watch(paths.src.js, gulp.series('js')).on('change', browserSync.reload);
   // gulp.watch(paths.src.templates, gulp.series('templates')).on('change', browserSync.reload);
-  gulp.watch(paths.src.root + paths.dist.templates + '/**/*.hbs', gulp.series('delhtml', 'templates', 'inject')).on('change', browserSync.reload);
+  gulp.watch(paths.src.root + paths.dist.templates + '/**/*.hbs', gulp.series('delhtml', 'templates')).on('change', browserSync.reload);
   gulp.watch(paths.src.html).on('change', browserSync.reload);
 });
 
@@ -513,13 +521,13 @@ gulp.task('tocss', gulp.series('tailwind', 'sass', 'css'));
 //Compile SCSS to CSS and purge & minify css, needed when modify scss
 gulp.task('scss', gulp.series('sass', 'css'));
 
-//Inject path manually in 'header.hbs' files, no 'inject' task
+//Inject path manually in 'meta.hbs' files, no 'inject' task
 gulp.task('temp', gulp.series('templates'));
 //Inject path to all html files relative to /src and /dist [NO for different injection in html]
-gulp.task('html', gulp.series('inject', 'build-inject'));
+gulp.task('html', gulp.series('delhtml', 'templates', 'sass', 'js', 'inject'));
 
 //0. Preset
-gulp.task('start', gulp.series('vendors', 'sass', 'js', 'templates', 'inject'));
+gulp.task('start', gulp.series('vendors', 'delhtml', 'templates', 'sass', 'js', 'inject'));
 
 //1. Preset then watch
 gulp.task('server', gulp.series('vendors', 'templates', 'sass', 'js', 'inject', 'watch'));
