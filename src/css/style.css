@@ -65,7 +65,7 @@ body::before {
   color: #2e2e2e !important;
 }
 
-footer img[alt*="無障礙"] {
+footer img[alt*='無障礙'] {
   max-height: 30px;
 }
 

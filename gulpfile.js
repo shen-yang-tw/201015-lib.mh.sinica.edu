@@ -177,7 +177,7 @@ gulp.task('copyfonts', function() {
 //gulp.task('templates', async function(){}): It must need the 'async' or get error 'Did you forget to signal async completion?'
 gulp.task('templates', async function() {
   var templateData = {
-      title: '長庚科技大學圖書資訊處-圖書推薦系統'
+      title: '中研院近史所圖書館'
     },
     options = {
       batch: [paths.src.root + paths.dist.templates + '/partials'],
@@ -534,8 +534,8 @@ gulp.task('server', gulp.series('vendors', 'templates', 'sass', 'js', 'inject', 
 
 //3. Prepare all assets for production, run: 'yarn build-nohtml' or 'yarn build'
 gulp.task('build-nohtml', gulp.series('vendors', 'tocss', 'js', 'img'));
-gulp.task('build-purge', gulp.series('dist', 'clean', 'vendors', 'tocss', 'js', 'img', 'templates', 'build-inject'));
-gulp.task('build', gulp.series('dist', 'clean', 'vendors', 'tocss', 'js', 'img', 'templates', 'inject', 'build-inject'));
+gulp.task('build-purge', gulp.series('dist', 'clean', 'vendors', 'delhtml', 'templates', 'tocss', 'js', 'img', 'build-inject'));
+gulp.task('build', gulp.series('dist', 'clean', 'vendors', 'delhtml', 'templates', 'tocss', 'js', 'img', 'inject', 'build-inject'));
 
 //--- 0.First run: 'gulp start'
 //--- 1.For development run: 'gulp server' or 'yarn server'
