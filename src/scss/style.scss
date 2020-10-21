@@ -30,6 +30,14 @@ strong {
 .logo>* {
   min-width: 200px;
   max-height: 70px;
+  max-width: 650px;
+}
+/*---------- IE10+ ------------------------------*/
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  // .logo>* {
+  //   max-width: 650px;
+  // }
 }
 
 .uk-heading-line>::after, .uk-heading-line>::before {
@@ -46,14 +54,6 @@ strong {
   margin: 2px 0;
 }
 
-/*---------- IE10+ ------------------------------*/
-@media all and (-ms-high-contrast: none),
-(-ms-high-contrast: active) {
-  .logo>img {
-    width: 927px;
-    height: 153px;
-  }
-}
 
 body::before,
 header::before {
@@ -93,6 +93,11 @@ body::before {
   background: none;
   // & * {color: $color-text !important;}
   & * {color: $color-text-dark !important;}
+}
+
+//Fix IE
+footer img[alt*='無障礙'] {
+  max-height: 30px;
 }
 
 #banner {

@@ -1,3 +1,4 @@
+
 body {
   background-color: #FEFDF9;
 }
@@ -21,8 +22,10 @@ strong {
 .logo > * {
   min-width: 200px;
   max-height: 70px;
+  max-width: 650px;
 }
 
+/*---------- IE10+ ------------------------------*/
 .uk-heading-line > ::after, .uk-heading-line > ::before {
   top: calc(50% - (2px/ 2));
   border-bottom: calc(2px) dotted #606f7b;
@@ -35,14 +38,6 @@ strong {
 .icon {
   width: 65px;
   margin: 2px 0;
-}
-
-/*---------- IE10+ ------------------------------*/
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .logo > img {
-    width: 927px;
-    height: 153px;
-  }
 }
 
 body::before,
@@ -68,6 +63,10 @@ body::before {
 
 #footer *, footer * {
   color: #2e2e2e !important;
+}
+
+footer img[alt*="無障礙"] {
+  max-height: 30px;
 }
 
 #banner {

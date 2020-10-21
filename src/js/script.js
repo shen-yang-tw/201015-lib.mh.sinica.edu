@@ -512,8 +512,8 @@ function listShowTab(link, ukTab) {
 function logoSvg(logoSvg) {
   var logo = document.querySelector(logoSvg)
   UIkit.svg(logo).svg.then(function (svg) {
-    // svg.setAttribute("preserveAspectRatio", "xMinYMid")
-    svg.querySelector('path').style.stroke = 'red'
+    svg.setAttribute("preserveAspectRatio", "xMinYMid")
+    // svg.querySelector('path').style.stroke = 'red'
   })
 }
 
