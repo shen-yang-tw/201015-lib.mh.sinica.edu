@@ -29,8 +29,24 @@ strong {
 
 .logo>* {
   min-width: 200px;
-  max-height: 70px;
-  max-width: 650px;
+  max-height: 50px;
+  // width: calc(1304px/144.5*50) !important;
+}
+@media (min-width: 640px) {
+  .logo>* {
+    min-width: 350px;
+    max-width: 450px;
+  }  
+}
+@media (min-width: 960px) {
+  .logo>* {
+    min-width: 450px;
+  }  
+}
+@media (min-width: 960px) {
+  .logo>* {
+    max-width: 650px;
+  }  
 }
 /*---------- IE10+ ------------------------------*/
 @media all and (-ms-high-contrast: none),
@@ -159,15 +175,9 @@ footer img[alt*='無障礙'] {
 @media (min-width: 480px) {}
 
 @media (min-width: 640px) {
-  .logo>* {
-    min-width: 350px;
-  }  
 }
 
 @media (min-width: 960px) {
-  .logo>* {
-    min-width: 450px;
-  }  
 }
 
 @media (min-width: 1200px) {}

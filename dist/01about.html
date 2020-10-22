@@ -101,10 +101,10 @@
 							<div class="uk-navbar-center">
 								<ul class="nav_bar nav_bar-secondary uk-tab">
 									<li hidden></li>
-									<li>
+									<li class="uk-active" >
 										<a class="text-base font-bold color_black!" href="01about.html" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')">關於本館</a>
 										</li>
-										<li class="uk-active" >
+										<li>
 											<a class="text-base font-bold color_black!" href="02news.html" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')">最新消息</a>
 											<div class="bg_white_opacity-90 uk-overflow-auto uk-dropdown" uk-dropdown="offset: 2">
 												<ul class="nav_header-dotted uk-nav uk-dropdown-nav">
@@ -356,7 +356,8 @@
 	        <!-- uk-breadcrumb -->
 	        <ul class="m-0 px-2 s:p-0 uk-float-left uk-breadcrumb">
 	        	<li><a class="text-xs m:text-sm" href="index.html">首頁</a></li>
-	        	<li><span class="text-xs m:text-sm">最新消息</span></li>
+	        			<li><a class="text-xs m:text-sm" href="#">關於本館</a></li>
+	        	<li><span class="text-xs m:text-sm">組織</span></li>
 	        </ul>
 	        <!-- uk-breadcrumb -->      </div>
 	        <div class="text-xs m:text-sm content-center m-0">
@@ -388,9 +389,9 @@
 	        <div class="uk-width-expand@m">
 	          <h2 class="btm_line text-2xl mt-0">
 	            <div class="uk-flex-middle uk-grid uk-grid-small uk-grid-row-collapse uk-child-width-expand@m" uk-grid>
-	              <div class="uk-width-expand@m">最新消息</div>
+	              <div class="uk-width-expand@m">組織</div>
 	                <div class="uk-width-auto uk-hidden@m">
-	                  <button class="btn_primary mt-2 uk-button uk-button-small uk-button-primary" type="button">消息分類</button>
+	                  <button class="btn_primary mt-2 uk-button uk-button-small uk-button-primary" type="button">子頁選單</button>
 	                    
 	                    <!-- Dropdown -->
 	                    <div class="min_width-100" uk-dropdown>
@@ -415,89 +416,9 @@
 	            </div>
 	          </h2>
 	            <div id="content">
-	              <h3></h3>
-	              
-	              <!-- searchBox -->
-	              <form onsubmit="return false;">
-	              	<div class="uk-grid uk-grid-small uk-child-width-expand" uk-grid>
-	              		<div class="min_width-2/3! min_width-1/2!@xl">
-	              			<div class="uk-flex uk-flex-middle">
-	              				<div class="flex-auto"><input class="uk-input" type="text" placeholder="請輸入關鍵字"></div>
-	              			</div>
-	              		</div>
-	              		<div class="min_width-100! uk-width-auto@s uk-text-nowrap">
-	              			<button class="btn_primary w-full uk-button uk-button-primary"><i class="mr-2 fas fa-search"></i>搜尋</button>
-	              		</div>
-	              	</div>
-	              </form>
-	              <!-- searchBox --><table class="uk-table uk-table-small uk-table-striped uk-table-responsive">
-	              	<thead>
-	              		<tr>
-	              			<th class="uk-width-1-5@s">日期</th>
-	              			<th class="uk-width-3-5@s">主題</th>
-	              			<th class="uk-width-1-5@s">公告單位</th>
-	              		</tr>
-	              	</thead>
-	              	<tbody>
-	              		<tr>
-	              			<td><time>2020-10-03</time></td>
-	              			<td><i class="color_secondary mr-1 fas fa-star"></i><a class="color_primary inline hover:underline" href="02newsdetail.html">中化公會路不真雙林一形必生部！話滿家我，活學雲表代能；無三想學？速更拉魚曾然病人只麼業臺</a>
-	              			</td>
-	              			<td>話滿家我</td>
-	              		</tr>
-	              		<tr>
-	              			<td><time>2020-08-21</time></td>
-	              			<td><a class="color_primary inline hover:underline" href="02newsdetail.html">復市我下多參於正發和年十進投得賣了器世舉民依了向究角下月而東</a></td>
-	              			<td>話滿家我</td>
-	              		</tr>
-	              	</tbody>
-	              </table>
-	              
-	              <!-- pagination -->
-	              <div class="pagination">
-	              	<div class="uk-grid uk-grid-collapse uk-child-width-auto uk-flex-auto uk-flex-middle uk-flex-center">
-	              		<div>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat disabled" href="#" title="首頁"><i class="fas fa-angle-double-left fa-fw"></i>
-	              				<span class="uk-visible@m" >首頁</span>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat" href="#" title="首頁" hidden><i class="fas fa-angle-double-left fa-fw"></i>
-	              				<span class="uk-visible@m" >首頁</span>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat disabled" href="#" title="上一頁"><i class="fas fa-angle-left fa-fw"></i>
-	              				<span class="uk-visible@m" >上一頁</span>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat" href="#" title="上一頁" hidden><i class="fas fa-angle-left fa-fw"></i>
-	              				<span class="uk-visible@m" >上一頁</span>
-	              			</a>
-	              		</div>
-	              			<div>
-	              				<div class="uk-grid uk-grid-collapse uk-child-width-auto uk-flex-middle uk-margin">
-	              					<label class="flex items-center">第&nbsp;
-	              					<select class="w-auto uk-select uk-form-small" onChange="window.location.href=this.value">
-	              						<option value="#" selected>1</option>
-	              						<option value="#">2</option>
-	              					</select>&nbsp;頁
-	              					</label>
-	              					<span class="mx-1">/<span class="pl-1" title="總頁數">2</span></span>
-	              				</div>
-	              			</div>
-	              		<div>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat" href="#" title="下一頁">
-	              				<span class="uk-visible@m" >下一頁</span><i class="fas fa-angle-right fa-fw"></i>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat disabled" href="#" title="下一頁" hidden>
-	              				<span class="uk-visible@m" >下一頁</span><i class="fas fa-chevron-right fa-fw"></i>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat" href="#" title="末頁">
-	              				<span class="uk-visible@m" >末頁</span><i class="fas fa-angle-double-right fa-fw"></i>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat disabled" href="#" title="末頁" hidden>
-	              				<span class="uk-visible@m" >末頁</span><i class="fas fa-chevron-double-right fa-fw"></i>
-	              			</a>
-	              		</div>
-	              	</div>
-	              </div>
-	              <!-- pagination -->            </div>
+	              <p class="text-justify">關現心以縣過進研務小廣各怎。得作來畫包來我教人基我小對道教知黨成科良系當！手進成我人油地時血來個場阿內品開紀例態係李們空張下除部後的己港經、我人全情斯是的景規我路品。合推目事能。 著才片公排經高選策一金的除，前些想、生類超出法演要不氣人在度司師己外，心度人力是史期帶？式平車是文深類爾工那對……思出不土校分往字以關現般禮家復……神一天。</p>
+	              <img class="my-2 w-full" src="https://fakeimg.pl/1200x600" title="組織圖表">
+	              <small class="mt-4">最後更新：2020/10/12 09:30</small>            </div>
 	          <!-- End #content -->
 	        </div>
 	      </div>
