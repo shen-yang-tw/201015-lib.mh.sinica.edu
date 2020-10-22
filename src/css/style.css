@@ -49,7 +49,7 @@ strong {
   border-bottom: calc(2px) dotted #606f7b;
 }
 
-.uk-input, .uk-select, .uk-textarea {
+.uk-input, .uk-select, .uk-textarea, .uk-button-default {
   border-color: #d0d0d0;
 }
 

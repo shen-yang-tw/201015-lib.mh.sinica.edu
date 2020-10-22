@@ -13,32 +13,32 @@
 	<link rel="stylesheet" href="css/uikit.min.css">
 	<!-- endinject -->
 	<!-- tw:css -->
-	<link rel="stylesheet" href="css/tailwind.css">
+	<link rel="stylesheet" href="css/tailwind.min.css">
 	<!-- endinject -->
 	<!-- fa:css -->
 	<link rel="stylesheet" href="css/fontawesome.min.css">
 	<!-- endinject -->
 	<!-- main:css -->
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/main.min.css">
 	<!-- endinject -->
 	<!-- colors:css -->
-	<link rel="stylesheet" href="css/colors.css">
+	<link rel="stylesheet" href="css/colors.min.css">
 	<!-- endinject -->
 	<!-- style:css -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.min.css">
 	<!-- endinject -->
 	<!-- inject:css -->
-	<link rel="stylesheet" href="css/editor.css">
+	<link rel="stylesheet" href="css/editor.min.css">
 	<!-- endinject -->
 	<!-- uk:js -->
 	<script src="js/uikit-icons.min.js"></script>
 	<script src="js/uikit.min.js"></script>
 	<!-- endinject -->
 	<!-- head:js -->
-	<script src="js/script.js" defer></script>
+	<script src="js/script.min.js" defer></script>
 	<!-- endinject -->
 	<!-- inject:js -->
-	<script src="js/nav-menu-basic.js" defer></script>
+	<script src="js/nav-menu-basic.min.js" defer></script>
 	<!-- endinject -->
 </head>
 
@@ -231,36 +231,43 @@
 	<!-- uk-modal-login -->
 	<div id="login" class="uk-flex-top" uk-modal>
 	  <div class="uk-modal-dialog uk-margin-auto-vertical">
-	    <button class="uk-modal-close-default" type="button" title="刪除" uk-close></button>
-	    <div class="uk-modal-header">
-	      <h2 class="uk-modal-title">會員登入</h2>
-	    </div>
-	    <div class="uk-modal-body">
-	      <form onsubmit="return false;">
-	        <div class="uk-grid-small uk-child-width-expand@m uk-grid" uk-grid>
-	          <div class="space-y-1 min_width-1/2!@m">
-	            <input class="uk-input" type="email" placeholder="請輸入個人信箱">
-	            <p class="color_secondary-text uk-text-small">驗證提示語</p>
+	    <form onsubmit="return false;">
+	      <button class="uk-modal-close-default" type="button" title="刪除" uk-close></button>
+	      <div class="uk-modal-header">
+	        <h2 class="uk-modal-title">會員登入</h2>
+	      </div>
+	      <div class="uk-modal-body">
+	        <div class="margin_y_child-even-m uk-grid uk-grid-collapse uk-child-width-expand@s" uk-grid>
+	          <div class="min_width-1/3!@s">
+	            <label class="min_height-40 font_size-10 font-bold flex uk-flex-middle uk-form-label" for="form_id">帳號</label>
 	          </div>
-	          <div class="space-y-1 min_width-1/2!@m">
-	            <input class="uk-input" type="password" placeholder="6-15碼英數混合密碼">
-	            <p class="color_secondary-text uk-text-small">驗證提示語</p>
+	          <div class="space-y-1 min_width-2/3!@s">
+	            <input id="form_id" class="match uk-input" type="text" placeholder="請輸入個人信箱">
+	              <p class="color_secondary-text uk-text-small">驗證提示語</p>
 	          </div>
-	        </div>
-	      </form>
-	    </div>
-	    <div class="uk-modal-footer">
-	      <div class="uk-grid-small uk-child-width-expand@m uk-grid" uk-grid>
-	        <div class="min_width-1/2!@m">
-	          
-	          <a class="" href="#">忘記密碼</a>
-	        </div>
-	        <div class="margin_y_child-all min_width-1/2!@m s:text-right">
-	          <a href="#" class="btn_primary min_width-120 uk-button uk-button-primary">登　　入</a>
-	          <button class="min_width-120 uk-button uk-button-default uk-modal-close" type="button">取　　消</button>
+	          <div class="min_width-1/3!@s">
+	            <label class="min_height-40 font_size-10 font-bold flex uk-flex-middle uk-form-label" for="form_pwd">密碼</label>
+	          </div>
+	          <div class="space-y-1 min_width-2/3!@s">
+	            <input id="form_pwd" class="match uk-input" type="password" placeholder="6-15碼英數混合密碼">
+	              <p class="color_secondary-text uk-text-small">驗證提示語</p>
+	          </div>
+	            <small class="mt-2"><i class="mr-1 fas fa-question-circle"></i>登入說明</small>
 	        </div>
 	      </div>
-	    </div>
+	      <div class="text-center s:text-left uk-modal-footer">
+	        <div class="uk-grid-small uk-child-width-expand@s uk-grid" uk-grid>
+	          <div class="min_width-1/2!@s">
+	            <a class="mr-2 uk-text-small" href="#register" uk-toggle>會員註冊</a>
+	            <a class="uk-text-small" href="#">忘記密碼</a>
+	          </div>
+	          <div class="margin_y_child-all min_width-1/2!@s s:text-right">
+	            <a href="#" class="btn_primary min_width-100 uk-button uk-button-primary">登　　入</a>
+	            <button class="min_width-100 uk-button uk-button-default uk-modal-close" type="button">取　　消</button>
+	          </div>
+	        </div>
+	      </div>
+	    </form>
 	  </div>
 	</div>
 	<!-- uk-modal-login -->
@@ -268,77 +275,78 @@
 	<!-- uk-modal-register -->
 	<div id="register" class="uk-flex-top uk-modal" uk-modal>
 		<div class="uk-modal-dialog uk-margin-auto-vertical">
-			<button class="uk-modal-close-default" type="button" title="刪除" uk-close></button>
-			<div class="uk-modal-header">
-				<h2 class="uk-modal-title">會員註冊</h2>
-			</div>
-			<div class="uk-modal-body">
-				<form onsubmit="return false;">
-					<div class="margin_y_child-even-m uk-grid uk-grid-collapse uk-flex-middle uk-child-width-expand@s"
-						uk-grid uk-height-match="target: .match">
-						<div class="match min_width-1/3!@s flex uk-flex-middle">
-							<label class="font_size-10 font-bold uk-form-label" for="form_name">姓名</label>
+			<form onsubmit="return false;">
+				<button class="uk-modal-close-default" type="button" title="刪除" uk-close></button>
+				<div class="uk-modal-header">
+					<h2 class="uk-modal-title">會員註冊</h2>
+				</div>
+				<div class="uk-modal-body">
+					<div class="margin_y_child-even-m uk-grid uk-grid-collapse uk-child-width-expand@s" uk-grid>
+						<div class="min_width-1/3!@s">
+							<label class="min_height-40 font_size-10 font-bold flex uk-flex-middle uk-form-label" for="form_name">姓名</label>
 						</div>
 						<div class="space-y-1 min_width-2/3!@s">
 							<input id="form_name" class="match uk-input" type="text" placeholder="">
+								<p class="color_secondary-text uk-text-small">驗證提示語</p>
 						</div>
-						<div class="match min_width-1/3!@s flex uk-flex-middle">
-							<label class="font_size-10 font-bold uk-form-label" for="form_email">Email</label>
+						<div class="min_width-1/3!@s">
+							<label class="min_height-40 font_size-10 font-bold flex uk-flex-middle uk-form-label" for="form_email">Email</label>
 						</div>
 						<div class="space-y-1 min_width-2/3!@s">
-							<input id="form_email" class="match uk-input" type="text" placeholder="">
+							<input id="form_email" class="match uk-input" type="email" placeholder="">
+								<p class="color_secondary-text uk-text-small">驗證提示語</p>
 						</div>
 					</div>
-				</form>
-			</div>
-			<div class="text-center uk-modal-footer" uk-margin>
-				<a href="#" class="btn_primary min_width-100 m-0 uk-button uk-button-primary">註　　冊</a>
-				<button class="min_width-100 uk-button uk-button-default uk-modal-close" type="button">取　　消</button>
-			</div>
+				</div>
+				<div class="text-center uk-modal-footer" uk-margin>
+					<a href="#" class="btn_primary min_width-100 m-0 uk-button uk-button-primary">註　　冊</a>
+					<button class="min_width-100 uk-button uk-button-default uk-modal-close" type="button">取　　消</button>
+				</div>
+			</form>
 		</div>
 	</div>
 	<!-- uk-modal-register -->
 	
-	
 	<!-- uk-modal-login -->
 	<div id="password" class="uk-flex-top" uk-modal>
 	  <div class="uk-modal-dialog uk-margin-auto-vertical">
-	    <button class="uk-modal-close-default" type="button" title="刪除" uk-close></button>
-	    <div class="uk-modal-header">
-	      <h2 class="uk-modal-title">修改密碼</h2>
-	    </div>
-	    <div class="uk-modal-body">
-	      <form onsubmit="return false;">
+	    <form onsubmit="return false;">
+	      <button class="uk-modal-close-default" type="button" title="刪除" uk-close></button>
+	      <div class="uk-modal-header">
+	        <h2 class="uk-modal-title">修改密碼</h2>
+	      </div>
+	      <div class="uk-modal-body">
 	        <div class="margin_y_child-even-m uk-grid uk-grid-collapse uk-child-width-expand@s" uk-grid>
 	          <div class="min_width-1/3!@s">
-	            <label class="min_height-40 font_size-10 font-bold flex uk-flex-middle uk-form-label" for="old_pass">舊密碼</label>
+	            <label class="min_height-40 font_size-10 font-bold flex uk-flex-middle uk-form-label" for="old_pwd">舊密碼</label>
 	          </div>
 	          <div class="space-y-1 min_width-2/3!@s">
-	            <input id="old_pass" class="match uk-input" type="text" placeholder="">
+	            <input id="old_pwd" class="match uk-input" type="password" placeholder="">
 	              <p class="color_secondary-text uk-text-small">驗證提示語</p>
 	          </div>
 	          <div class="min_width-1/3!@s">
-	            <label class="min_height-40 font_size-10 font-bold flex uk-flex-middle uk-form-label" for="new_pass">新密碼</label>
+	            <label class="min_height-40 font_size-10 font-bold flex uk-flex-middle uk-form-label" for="new_pwd">新密碼</label>
 	          </div>
 	          <div class="space-y-1 min_width-2/3!@s">
-	            <input id="new_pass" class="match uk-input" type="text" placeholder="">
+	            <input id="new_pwd" class="match uk-input" type="password" placeholder="">
 	              <p class="color_secondary-text uk-text-small">驗證提示語</p>
 	          </div>
 	          <div class="min_width-1/3!@s">
-	            <label class="min_height-40 font_size-10 font-bold flex uk-flex-middle uk-form-label" for="confirm_pass">確認新密碼</label>
+	            <label class="min_height-40 font_size-10 font-bold flex uk-flex-middle uk-form-label" for="confirm_pwd">確認新密碼</label>
 	          </div>
 	          <div class="space-y-1 min_width-2/3!@s">
-	            <input id="confirm_pass" class="match uk-input" type="text" placeholder="">
+	            <input id="confirm_pwd" class="match uk-input" type="password" placeholder="">
 	              <p class="color_secondary-text uk-text-small">驗證提示語</p>
 	          </div>
 	        </div>
-	        <small class="mt-2"><i class="mr-1 fas fa-question-circle"></i>密碼規則說明</small>
-	      </form>
-	    </div>
-			<div class="text-center uk-modal-footer" uk-margin>
-				<a href="#" class="btn_primary min_width-100 m-0 uk-button uk-button-primary">確　　定</a>
-				<button class="min_width-100 uk-button uk-button-default uk-modal-close" type="button">取　　消</button>
-			</div>
+	          <small class="mt-2"><i class="mr-1 fas fa-question-circle"></i>密碼規則說明</small>
+	      </div>
+	      <div class="text-center uk-modal-footer" uk-margin>
+	        <a href="#" class="btn_primary min_width-100 m-0 uk-button uk-button-primary">確　　定</a>
+	        <button class="btn_primary min_width-100 uk-button uk-button-primary" type="reset" value="Reset">重　　填</button>
+	        <button class="min_width-100 uk-button uk-button-default uk-modal-close" type="button">取　　消</button>
+	      </div>
+	    </form>
 	  </div>
 	</div>
 	<!-- uk-modal-login -->
@@ -416,25 +424,25 @@
 	            </div>
 	          </h2>
 	            <div id="content">
-	              <h3 class="text-xl font-medium uk-text-bold">消息標題文字</h3>
+	              <h3 class="my-1 text-xl font-medium uk-text-bold">消息標題文字</h3>
 	              <div class="margin_x_child my-3 uk-flex uk-flex-middle" uk-grid uk-margin>
 	              	<span class="margin_x_child"><i class="mr-1 far fa-calendar fa-fw"></i>發佈日期：<time class="color_secondary">2020-10-24</time></span>
+	              	<span class="margin_x_child"><i class="mr-1 fas fa-user fa-fw"></i>單位：<em class="not-italic">行政室</em></span>
 	              	<span class="margin_x_child"><i class="mr-1 fas fa-tag fa-fw"></i>類別：<em class="not-italic">行政簡訊</em></span>
 	              	<span class="margin_x_child"><i class="mr-1 fas fa-eye fa-fw"></i>點閱數：<em class="not-italic">123</em></span>
 	              	<span class="m-auto"></span>
-	              	<span class="margin_x_child margin_y_all_child"><a class="btn_primary uk-button uk-button-primary uk-button-small" href="#"><i class="mr-1 fas fa-cloud-download-alt"></i>Download</a><a class="btn_primary uk-button uk-button-primary uk-button-small" href="#"><i class="mr-1 fas fa-cloud-download-alt"></i>制實數人用路起百教高民味我各一院</a></span>
 	              </div>
-	              <p class="text-justify"><strong>主旨：</strong></p>
-	              <p class="text-justify">關現心以縣過進研務小廣各怎。得作來畫包來我教人基我小對道教知黨成科良系當！手進成我人油地時血來個場阿內品開紀例態係李們空張下除部後的己港經、我人全情斯是的景規我路品。合推目事能。 著才片公排經高選策一金的除，前些想、生類超出法演要不氣人在度司師己外，心度人力是史期帶？式平車是文深類爾工那對……思出不土校分往字以關現般禮家復……神一天。</p>
-	              <p class="text-justify"><strong>說明：</strong></p>
-	              <ol class="list_decimal_ch">
-	              	<li>關現心以縣過進研務小廣各怎。</li>
-	              	<li>關現心以縣過進研務小廣各怎。</li>
-	              </ol>
-	              <p class="text-justify">關現心以縣過進研務小廣各怎。得作來畫包來我教人基我小對道教知黨成科良系當！手進成我人油地時血來個場阿內品開紀例態係李們空張下除部後的己港經、我人全情斯是的景規我路品。合推目事能。 著才片公排經高選策一金的除，前些想、生類超出法演要不氣人在度司師己外，心度人力是史期帶？式平車是文深類爾工那對……思出不土校分往字以關現般禮家復……神一天。 小找哥只師著在什時事說開是作。為才與花現育的叫證實開。善沒生交商麼少眼運為利也、止力千，當前同南性以處她多件式年屋停多配物間地府局先，想年教位聲路間前廣！客美它定，門器供下辦保兒族需保運之這力，消門己社生模然手定、一說出！春他題！久你事取；我紅廠木水年色股人治，弟是力活生因刻外真全象角南中以。 果想事相省實飛農營未口前流接生光舞奇體性麼樂的什上長國校型差不源求看法界長文數只，<a class="color_secondary link_line" href="#">細可能分有弟</a>、氣現分物半獎選字。 年己人找。大得象功個土會代之題速越眼，知子知行氣靈。定紙代業大 <a class="color_secondary link_line" href="mailto:user@xxx">Email:user@xxx</a>
-	              	<br>
-	              	<a class="color_secondary link_line" href="#">https://www.google.com/?hl=zh_tw</a>
-	              </p>            </div>
+	              <div class="my-2 mt-10">
+	              	<p class="text-justify">關現心以縣過進研務小廣各怎。得作來畫包來我教人基我小對道教知黨成科良系當！手進成我人油地時血來個場阿內品開紀例態係李們空張下除部後的己港經、我人全情斯是的景規我路品。合推目事能。 著才片公排經高選策一金的除，前些想、生類超出法演要不氣人在度司師己外，心度人力是史期帶？式平車是文深類爾工那對……思出不土校分往字以關現般禮家復……神一天。</p>
+	              	<ol class="list_decimal_ch list-inside pl-0">
+	              		<li>關現心以縣過進研務小廣各怎。</li>
+	              		<li>關現心以縣過進研務小廣各怎。</li>
+	              	</ol>
+	              	<p class="text-justify">關現心以縣過進研務小廣各怎。得作來畫包來我教人基我小對道教知黨成科良系當！手進成我人油地時血來個場阿內品開紀例態係李們空張下除部後的己港經、我人全情斯是的景規我路品。合推目事能。 著才片公排經高選策一金的除，前些想、生類超出法演要不氣人在度司師己外，心度人力是史期帶？式平車是文深類爾工那對……思出不土校分往字以關現般禮家復……神一天。 小找哥只師著在什時事說開是作。為才與花現育的叫證實開。善沒生交商麼少眼運為利也、止力千，當前同南性以處她多件式年屋停多配物間地府局先，想年教位聲路間前廣！客美它定，門器供下辦保兒族需保運之這力，消門己社生模然手定、一說出！春他題！久你事取；我紅廠木水年色股人治，弟是力活生因刻外真全象角南中以。 果想事相省實飛農營未口前流接生光舞奇體性麼樂的什上長國校型差不源求看法界長文數只，<a class="color_secondary link_line" href="#">細可能分有弟</a>、氣現分物半獎選字。 年己人找。大得象功個土會代之題速越眼，知子知行氣靈。定紙代業大 <a class="color_secondary link_line" href="mailto:user@xxx">Email:user@xxx</a>
+	              		<br>
+	              		<a class="color_secondary link_line" href="#">https://www.google.com/?hl=zh_tw</a>
+	              	</p>
+	              </div>            </div>
 	          <!-- End #content -->
 	        </div>
 	      </div>
