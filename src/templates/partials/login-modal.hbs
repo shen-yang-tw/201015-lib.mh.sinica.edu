@@ -10,29 +10,29 @@
       </div>
       <div class="uk-modal-body">
         <div class="margin_y_child-even-m uk-grid uk-grid-collapse uk-child-width-expand@s" uk-grid>
-          <div class="min_width-1/3!@s">
+          <div class="min_width-1/4!@s">
             <label class="min_height-40 font_size-10 font-bold flex uk-flex-middle uk-form-label" for="form_id">帳號</label>
           </div>
-          <div class="space-y-1 min_width-2/3!@s">
+          <div class="space-y-1 min_width-3/4!@s">
             <input id="form_id" class="match uk-input" type="text" placeholder="請輸入個人信箱">
             {{#if errorOn}}
               <p class="color_secondary-text uk-text-small">{{error}}</p>
             {{/if}}
           </div>
-          <div class="min_width-1/3!@s">
+          <div class="min_width-1/4!@s">
             <label class="min_height-40 font_size-10 font-bold flex uk-flex-middle uk-form-label" for="form_pwd">密碼</label>
           </div>
-          <div class="space-y-1 min_width-2/3!@s">
+          <div class="space-y-1 min_width-3/4!@s">
             <input id="form_pwd" class="match uk-input" type="password" placeholder="6-15碼英數混合密碼">
             {{#if errorOn}}
               <p class="color_secondary-text uk-text-small">{{error}}</p>
             {{/if}}
           </div>
           {{#if captcha}}
-            <div class="min_width-1/3!@s">
+            <div class="min_width-1/4!@s">
               <label class="min_height-40 font_size-10 font-bold flex uk-flex-middle uk-form-label" for="form_captcha">驗證</label>
             </div>
-            <div class="space-y-1 min_width-2/3!@s">
+            <div class="space-y-1 min_width-3/4!@s">
               <div class="uk-grid uk-grid-small uk-child-width-expand@s" uk-grid>
                 <div class="space-y-1 min_width-1/2!@s">
                   <input id="form_captcha" class="uk-input" type="text" placeholder="請輸入圖形6碼數字">
