@@ -2280,10 +2280,10 @@ $hover-brand-bg:"bg_facebook" $facebook, "bg_twitter" $twitter, "bg_googleplus" 
 #{$margin-y-all-child}\!>:not(#{$footer}) ,#{$margin-y-all-child-even}\!>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space, $important:$boolean)}
 #{$margin-y-all-child-m}\!>:not(#{$footer}) ,#{$margin-y-all-child-even-m}\!>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-m, $important:$boolean)}
 #{$margin-y-all-child-l}\!>:not(#{$footer}) ,#{$margin-y-all-child-even-l}\!>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-l, $important:$boolean)}
-@include min-max($selector:$left, $min:5, $max:50, $step:5, $property:true, $property-name:left);
-@include min-max($selector:$top, $min:5, $max:50, $step:5, $property:true, $property-name:top);
-@include min-max($selector:$right, $min:5, $max:50, $step:5, $property:true, $property-name:right);
-@include min-max($selector:$bottom, $min:5, $max:50, $step:5, $property:true, $property-name:bottom);
+@include min-max($selector:$left, $min:5, $max:50, $step:5, $property:true, $property-name:left, $unit:true, $unit-val:px);
+@include min-max($selector:$top, $min:5, $max:50, $step:5, $property:true, $property-name:top, $unit:true, $unit-val:px);
+@include min-max($selector:$right, $min:5, $max:50, $step:5, $property:true, $property-name:right, $unit:true, $unit-val:px);
+@include min-max($selector:$bottom, $min:5, $max:50, $step:5, $property:true, $property-name:bottom, $unit:true, $unit-val:px);
 #{$padding-x-child-0}>* {padding-left: 0; padding-right: 0;}
 #{$padding-x-child-0}\!>* {padding-left: 0 !important; padding-right: 0 !important;}
 #{$padding-x-child-m}>* {padding-left: $space-m; padding-right: $space-m;}
@@ -2313,10 +2313,10 @@ $hover-brand-bg:"bg_facebook" $facebook, "bg_twitter" $twitter, "bg_googleplus" 
   #{$margin-y-all-child}\!\@s>:not(#{$footer}) ,#{$margin-y-all-child-even}\!\@s>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space, $important:$boolean)}
   #{$margin-y-all-child-m}\!\@s>:not(#{$footer}) ,#{$margin-y-all-child-even-m}\!\@s>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-m, $important:$boolean)}
   #{$margin-y-all-child-l}\!\@s>:not(#{$footer}) ,#{$margin-y-all-child-even-l}\!\@s>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-l, $important:$boolean)}
-  @include min-max($selector:$left, $min:5, $max:50, $step:5, $property:true, $property-name:left, $media:\@s);
-  @include min-max($selector:$top, $min:5, $max:50, $step:5, $property:true, $property-name:top, $media:\@s);
-  @include min-max($selector:$right, $min:5, $max:50, $step:5, $property:true, $property-name:right, $media:\@s);
-  @include min-max($selector:$bottom, $min:5, $max:50, $step:5, $property:true, $property-name:bottom, $media:\@s);
+  @include min-max($selector:$left, $min:5, $max:50, $step:5, $property:true, $property-name:left, $unit:true, $unit-val:px, $media:\@s);
+  @include min-max($selector:$top, $min:5, $max:50, $step:5, $property:true, $property-name:top, $unit:true, $unit-val:px, $media:\@s);
+  @include min-max($selector:$right, $min:5, $max:50, $step:5, $property:true, $property-name:right, $unit:true, $unit-val:px, $media:\@s);
+  @include min-max($selector:$bottom, $min:5, $max:50, $step:5, $property:true, $property-name:bottom, $unit:true, $unit-val:px, $media:\@s);
   #{$padding-x-child-0}\@s>* {padding-left: 0; padding-right: 0;}
   #{$padding-x-child-0}\!\@s>* {padding-left: 0 !important; padding-right: 0 !important;}
   #{$padding-x-child-m}\@s>* {padding-left: $space-m; padding-right: $space-m;}
@@ -2347,10 +2347,10 @@ $hover-brand-bg:"bg_facebook" $facebook, "bg_twitter" $twitter, "bg_googleplus" 
   #{$margin-y-all-child}\!\@m>:not(#{$footer}) ,#{$margin-y-all-child-even}\!\@m>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space, $important:$boolean)}
   #{$margin-y-all-child-m}\!\@m>:not(#{$footer}) ,#{$margin-y-all-child-even-m}\!\@m>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-m, $important:$boolean)}
   #{$margin-y-all-child-l}\!\@m>:not(#{$footer}) ,#{$margin-y-all-child-even-l}\!\@m>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-l, $important:$boolean)}
-  @include min-max($selector:$left, $min:5, $max:50, $step:5, $property:true, $property-name:left, $media:\@m);
-  @include min-max($selector:$top, $min:5, $max:50, $step:5, $property:true, $property-name:top, $media:\@m);
-  @include min-max($selector:$right, $min:5, $max:50, $step:5, $property:true, $property-name:right, $media:\@m);
-  @include min-max($selector:$bottom, $min:5, $max:50, $step:5, $property:true, $property-name:bottom, $media:\@m);
+  @include min-max($selector:$left, $min:5, $max:50, $step:5, $property:true, $property-name:left, $unit:true, $unit-val:px, $media:\@m);
+  @include min-max($selector:$top, $min:5, $max:50, $step:5, $property:true, $property-name:top, $unit:true, $unit-val:px, $media:\@m);
+  @include min-max($selector:$right, $min:5, $max:50, $step:5, $property:true, $property-name:right, $unit:true, $unit-val:px, $media:\@m);
+  @include min-max($selector:$bottom, $min:5, $max:50, $step:5, $property:true, $property-name:bottom, $unit:true, $unit-val:px, $media:\@m);
   #{$padding-x-child-0}\@m>* {padding-left: 0; padding-right: 0;}
   #{$padding-x-child-0}\!\@m>* {padding-left: 0 !important; padding-right: 0 !important;}
   #{$padding-x-child-m}\@m>* {padding-left: $space-m; padding-right: $space-m;}
@@ -2381,10 +2381,10 @@ $hover-brand-bg:"bg_facebook" $facebook, "bg_twitter" $twitter, "bg_googleplus" 
   #{$margin-y-all-child}\!\@l>:not(#{$footer}) ,#{$margin-y-all-child-even}\!\@l>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space, $important:$boolean)}
   #{$margin-y-all-child-m}\!\@l>:not(#{$footer}) ,#{$margin-y-all-child-even-m}\!\@l>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-m, $important:$boolean)}
   #{$margin-y-all-child-l}\!\@l>:not(#{$footer}) ,#{$margin-y-all-child-even-l}\!\@l>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-l, $important:$boolean)}
-  @include min-max($selector:$left, $min:5, $max:50, $step:5, $property:true, $property-name:left, $media:\@l);
-  @include min-max($selector:$top, $min:5, $max:50, $step:5, $property:true, $property-name:top, $media:\@l);
-  @include min-max($selector:$right, $min:5, $max:50, $step:5, $property:true, $property-name:right, $media:\@l);
-  @include min-max($selector:$bottom, $min:5, $max:50, $step:5, $property:true, $property-name:bottom, $media:\@l);
+  @include min-max($selector:$left, $min:5, $max:50, $step:5, $property:true, $property-name:left, $unit:true, $unit-val:px, $media:\@l);
+  @include min-max($selector:$top, $min:5, $max:50, $step:5, $property:true, $property-name:top, $unit:true, $unit-val:px, $media:\@l);
+  @include min-max($selector:$right, $min:5, $max:50, $step:5, $property:true, $property-name:right, $unit:true, $unit-val:px, $media:\@l);
+  @include min-max($selector:$bottom, $min:5, $max:50, $step:5, $property:true, $property-name:bottom, $unit:true, $unit-val:px, $media:\@l);
   #{$padding-x-child-0}\@l>* {padding-left: 0; padding-right: 0;}
   #{$padding-x-child-0}\!\@l>* {padding-left: 0 !important; padding-right: 0 !important;}
   #{$padding-x-child-m}\@l>* {padding-left: $space-m; padding-right: $space-m;}
@@ -2415,10 +2415,10 @@ $hover-brand-bg:"bg_facebook" $facebook, "bg_twitter" $twitter, "bg_googleplus" 
   #{$margin-y-all-child}\!\@xl>:not(#{$footer}) ,#{$margin-y-all-child-even}\!\@xl>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space, $important:$boolean)}
   #{$margin-y-all-child-m}\!\@xl>:not(#{$footer}) ,#{$margin-y-all-child-even-m}\!\@xl>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-m, $important:$boolean)}
   #{$margin-y-all-child-l}\@xl>:not(#{$footer}) ,#{$margin-y-all-child-even-l}\@xl>:nth-child(even):not(#{$footer}) {@include space($property:margin-bottom, $size:$space-l, $important:$boolean)}
-  @include min-max($selector:$left, $min:5, $max:50, $step:5, $property:true, $property-name:left, $media:\@xl);
-  @include min-max($selector:$top, $min:5, $max:50, $step:5, $property:true, $property-name:top, $media:\@xl);
-  @include min-max($selector:$right, $min:5, $max:50, $step:5, $property:true, $property-name:right, $media:\@xl);
-  @include min-max($selector:$bottom, $min:5, $max:50, $step:5, $property:true, $property-name:bottom, $media:\@xl);
+  @include min-max($selector:$left, $min:5, $max:50, $step:5, $property:true, $property-name:left, $unit:true, $unit-val:px, $media:\@xl);
+  @include min-max($selector:$top, $min:5, $max:50, $step:5, $property:true, $property-name:top, $unit:true, $unit-val:px, $media:\@xl);
+  @include min-max($selector:$right, $min:5, $max:50, $step:5, $property:true, $property-name:right, $unit:true, $unit-val:px, $media:\@xl);
+  @include min-max($selector:$bottom, $min:5, $max:50, $step:5, $property:true, $property-name:bottom, $unit:true, $unit-val:px, $media:\@xl);
   #{$padding-x-child-0}\@xl>* {padding-left: 0; padding-right: 0;}
   #{$padding-x-child-0}\!\@xl>* {padding-left: 0 !important; padding-right: 0 !important;}
   #{$padding-x-child-m}\@xl>* {padding-left: $space-m; padding-right: $space-m;}
