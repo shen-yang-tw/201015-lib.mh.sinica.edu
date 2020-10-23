@@ -3718,6 +3718,13 @@ address, dl, fieldset, figure, ol, p, pre, ul {
 
 /*---------- IE10+ ------------------------------*/
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .bg-gradient-to-r {
+    background: linear-gradient(to right, #ffffff 0%, #000000 50%, #ffffff 100%);
+  }
+  .space-x-2 > :not(template) ~ :not(template) {
+    margin-right: .5rem !important;
+    margin-left: .5rem !important;
+  }
   #{$uk-grid}>th[class*=uk-width-], #{$uk-grid}>td[class*=uk-width-] {display: block;}
   #{$uk-table-responsive} #{$uk-grid}>td#{$uk-width-1-1} {flex-basis: 100%;}
   #{$uk-dropdown-nav} li>*:not(#{$hidden-ie}) {display: block !important;}
