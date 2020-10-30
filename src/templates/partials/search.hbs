@@ -1,0 +1,60 @@
+<h3>{{h3Title}}</h3>
+{{>searchBox placeholder='請輸入資料庫名稱' select='true' select2='true' only1button='true'}}
+<small class="mt-2">共計<span class="color_secondary">466</span>筆資料</small>
+<table class="mt-0 uk-table uk-table-small uk-table-striped uk-table-responsive">
+	<thead>
+		<tr>
+			<th class="uk-text-nowrap">序號</th>
+			<th class="w-1/3 uk-text-nowrap">資料庫名稱</th>
+			<th class="uk-text-nowrap">主題/學科</th>
+			<th class="uk-text-nowrap">收錄範圍</th>
+			<th class="w-1/6 uk-text-nowrap">使用規則</th>
+			<th class="uk-text-nowrap">簡介</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>01</td>
+			<td>
+				{{!-- <i class="color_secondary mr-1 fas fa-star"></i> --}}
+				<a class="color_primary hover:underline" href="#">
+					中化公會路不真雙林一形必生部
+				</a>
+			</td>
+			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">主題/學科</span>一形必生部</td>
+			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">收錄範圍</span>路不真雙</td>
+			<td>
+				<span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">使用規則</span>
+				<a class="color_primary" href="#">使用限制連結1</a>
+				<a class="color_primary" href="#">使用限制連結1</a>
+			</td>
+			<td>
+				<span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">簡介</span>
+				<a class="color_primary" href="#detail" uk-toggle><i class="color_primary mr-1 fas fa-info-circle fa-lg" title="詳細內容"></i><span class="sr-only">詳細內容</span></a>
+			</td>
+		</tr>
+		<tr>
+			<td>02</td>
+			<td>
+				{{!-- <i class="color_secondary mr-1 fas fa-star"></i> --}}
+				<a class="color_primary hover:underline" href="#">
+					中化公會路不真雙林一形必生部
+				</a>
+			</td>
+			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">主題/學科</span>一形必生部</td>
+			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">收錄範圍</span>路不真雙</td>
+			<td>
+				<span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">使用規則</span>
+				<a class="color_primary" href="#">使用限制連結1</a>
+				<a class="color_primary" href="#">使用限制連結1</a>
+			</td>
+			<td>
+				<span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">簡介</span>
+				<a class="color_primary" href="#detail2" uk-toggle><i class="color_primary mr-1 fas fa-info-circle fa-lg" title="詳細內容"></i><span class="sr-only">詳細內容</span></a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+{{>pagination pageArrowText='true' pageSelect='true' pageSum='2'}}
+{{>detail-modal id='detail' modal-title='標題名稱'}}
+{{>detail-modal id='detail2' modal-title='標題名稱2'}}

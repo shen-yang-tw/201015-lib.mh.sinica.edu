@@ -1,23 +1,12 @@
 <!-- header -->
 <header class="">
-	{{!-- <nav class="bg_primary py-1 text-center relative uk-visible@m" uk-margin>
-		<div class="px-4 py-1 uk-container">
-			<div class="sub_nav margin_x_child text-sm h-full uk-flex uk-flex-center uk-flex-middle" uk-margin>
-				<span class="uk-visible@m"><a class="px-2" href="#U" id="AU" name="U" title="上方功能區塊" accesskey="U"
-						style="padding-bottom: 3px;">:::</a></span>
-				<span><a class="px-2" href="index.html">回首頁</a></span>
-				<span><a class="px-2" href="#">常見問題</a></span>
-				<span><a class="px-2" href="#">聯絡我們</a></span>
-			</div>
-		</div>
-	</nav> --}}
 	<div class="uk-sticky" uk-sticky="media: (max-width: 959px); cls-active: shadow-xl bg-white">
 		<nav>
 			<div class="relative">
 				{{!-- <div class="bg-white opacity-85 uk-position-cover"></div> --}}
 				<div class="px-4 py-1 uk-container">
 					<div class="uk-flex-middle uk-grid uk-grid-small uk-grid-match uk-child-width-expand" uk-grid>
-						<div class="uk-position-z-index">
+						<div class="logo">
 							<h1 class="m-0 uk-flex uk-flex-middle">
 								<a class="logo" href="index.html" title="{{title}}">
 									<img class="uk-preserve" data-src="img/logo.svg" data-width data-height alt="{{title}}" uk-img uk-svg>
@@ -26,10 +15,12 @@
 						</div>
 						<div class="m-0 relative uk-width-auto uk-visible@m">
 							<div class="sub_nav text-xs uk-flex uk-flex-middle">
+								{{#if hrefForAA}}
 								<span class="uk-visible@m"><a class="text-base px-2" href="#U" id="AU" name="U" title="上方功能區塊" accesskey="U" style="padding-bottom: 3px;">:::</a></span>
+								{{/if}}
 								<div>
 									<span class="pseudo:line_v"><a href="index.html">回首頁</a></span>
-									<span class="pseudo:line_v"><a href="#">網站導覽</a></span>
+									<span class="pseudo:line_v"><a href="00sitemap.html">網站導覽</a></span>
 									<span class="pseudo:line_v"><a href="#">回本所</a></span>
 									<span class="pseudo:line_v"><a href="#">中研院圖書館</a></span>
 									<span class="pseudo:line_v"><a href="#">English</a></span>
@@ -38,8 +29,9 @@
 								<span><button class="color_primary border-none l:pr-0 uk-button uk-button-default" type="button" title="註冊/登入/登出"><i class="-mb-1 fas fa-user-circle fa-lg"></i></button></span>
 								<div class="min_width-50 uk-dropdown" uk-dropdown>
 									<ul class="uk-nav uk-dropdown-nav">
-										<li><a class="hover:underline py-2" href="00register.html">註冊</a></li>
-										<li><a class="hover:underline py-2" href="00login.html">登入</a></li>
+										<li><a class="hover:underline py-2" href="05password.html">更改密碼</a></li>
+										{{!-- <li><a class="hover:underline py-2" href="00register.html">註冊</a></li> --}}
+										<li><a class="hover:underline py-2" href="05login.html">登入</a></li>
 										<li><a class="hover:underline py-2" href="index.html">登出</a></li>
 									</ul>
 								</div>
@@ -50,8 +42,9 @@
 								<button class="color_primary border-none h-full uk-button uk-button-default" type="button" title="註冊/登入/登出"><i class="-mb-1 fas fa-user-circle fa-lg"></i></button>
 								<div class="min_width-50 uk-dropdown" uk-dropdown="pos: bottom-right">
 									<ul class="uk-nav uk-dropdown-nav">
-										<li><a class="hover:underline py-2" href="#register" uk-toggle>註冊</a></li>
-										<li><a class="hover:underline py-2" href="#login" uk-toggle>登入</a></li>
+										<li><a class="hover:underline py-2" href="05password.html">更改密碼</a></li>
+										{{!-- <li><a class="hover:underline py-2" href="00register.html">註冊</a></li> --}}
+										<li><a class="hover:underline py-2" href="05login.html">登入</a></li>
 										<li><a class="hover:underline py-2" href="index.html">登出</a></li>
 									</ul>
 								</div>
@@ -92,7 +85,7 @@
 									</div>
 								</li>
 								<li{{#if 03active}} class="uk-active"{{/if}}>
-									<a class="text-base font-bold color_black!" href="03service.html" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')">閱覽服務</a>
+									<a class="text-base font-bold color_black!" href="#" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')">閱覽服務</a>
 									<div class="bg_white_opacity-90 uk-overflow-auto uk-dropdown" uk-dropdown="offset: 2">
 										<ul class="nav_header-dotted uk-nav uk-dropdown-nav">
 											<li class="mt-0 uk-nav-header">
@@ -126,7 +119,7 @@
 									</div>
 								</li>
 								<li{{#if 04active}} class="uk-active"{{/if}}><a class="text-base font-bold color_black!" href="04search.html" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')">資源查詢</a></li>
-								<li{{#if 05active}} class="uk-active"{{/if}}><a class="text-base font-bold color_black!" href="05account.html" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')">我的圖書館</a></li>
+								<li{{#if 05active}} class="uk-active"{{/if}}><a class="text-base font-bold color_black!" href="#" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')">我的圖書館</a></li>
 								<li><a class="text-base font-bold color_black!" href="http://www.facebook.com/mhlib.sinica?ctNode=244&idPath=103_244" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')" target="_blank">Facebook</a></li>
 								<li><a class="text-base font-bold color_black!" href="https://asmhlibref.blogspot.com/?ctNode=253&idPath=103_253" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')" target="_blank">參考部落格</a></li>
 							</ul>
@@ -187,7 +180,7 @@
 					<a class="p-0" href="#"><span class="text-white">Level1</span></a>
 				</li>
 				<li class="uk-nav-divider"></li>
-				<li><a href="#">首頁</a></li>
+				<li><a href="index.html">首頁</a></li>
 				<li><a href="#">Item</a></li>
 				<li><a href="#">English</a></li>
 			</ul>

@@ -10347,23 +10347,23 @@ a, span, label, strong, small {
 }
 
 .btm_line {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   margin-bottom: 15px;
   padding-bottom: 5px;
 }
 
 .border_group > * {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   margin-left: -1px;
 }
 
 /*---------- uk-grid-divider ------------------------------*/
 .divider_dashed.uk-grid-divider > :not(.uk-first-column)::before, .divider_dashed.uk-grid-divider.uk-grid-stack > .uk-grid-margin::before {
-  border: 1px dashed rgba(0, 0, 0, 0.12);
+  border: 1px dashed rgba(0, 0, 0, 0.06);
 }
 
 .divider_child > :not(:last-child) {
-  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 /*---------- Space ------------------------------*/
@@ -11496,11 +11496,11 @@ a, span, label, strong, small {
   position: relative;
   z-index: 1;
   padding: 5px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .list_striped > li:first-child {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .list_striped > li:nth-of-type(odd) {
@@ -11618,11 +11618,11 @@ a, span, label, strong, small {
   border: none;
   margin: 0;
   color: inherit;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .list_decimal_row.list_badge.uk-list-striped > li.uk-alert:first-child {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .list_decimal_row.list_badge.uk-list-striped > li.uk-alert:nth-of-type(odd) {
@@ -11736,12 +11736,12 @@ a, span, label, strong, small {
   text-align: inherit;
   margin-bottom: -1px;
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 [class*=list_tabs] > li:last-child {
   margin-bottom: 0;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.06);
 }
 
 [class*=list_tabs] > li.tab_buttons-rounded:first-child {
@@ -82285,11 +82285,11 @@ a, span, label, strong, small {
   width: calc(13rem/16);
   height: calc(13rem/16);
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .checkbox_circle:hover + label:before {
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.06);
 }
 
 .checkbox_circle:focus + label:before {
@@ -82394,11 +82394,19 @@ section {
 }
 
 /*---------- Tab ------------------------------*/
-.tab_btn.uk-tab::before, .tab_btn-secondary.uk-tab::before {
+.tab_btn.uk-tab {
+  margin-left: 0;
+}
+
+.tab_btn.uk-tab::before {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.tab_btn.uk-tab.tab_btn-noline::before {
   display: none;
 }
 
-.tab_btn.uk-tab > li:first-child, .tab_btn-secondary.uk-tab > li:first-child {
+.tab_btn.uk-tab > li:first-child, .tab_btn.uk-tab > li.uk-first-column, .tab_btn-secondary.uk-tab > li.uk-first-column {
   padding-left: 0;
 }
 
@@ -82431,78 +82439,78 @@ section {
   color: white !important;
 }
 
-.tab_btn-space-xs > *:not(:first-child) {
+.tab_btn-space-xs > *:not(.uk-first-column):not(:first-child) {
   padding-left: 5px;
 }
 
-.tab_btn-space-xs\! > *:not(:first-child) {
+.tab_btn-space-xs\! > *:not(.uk-first-column):not(:first-child) {
   padding-left: 5px !important;
 }
 
-.tab_btn-space-s > *:not(:first-child) {
+.tab_btn-space-s > *:not(.uk-first-column):not(:first-child) {
   padding-left: 10px;
 }
 
-.tab_btn-space-s\! > *:not(:first-child) {
+.tab_btn-space-s\! > *:not(.uk-first-column):not(:first-child) {
   padding-left: 10px !important;
 }
 
 @media (min-width: 640px) {
-  .tab_btn-space-xs\@s > *:not(:first-child) {
+  .tab_btn-space-xs\@s > *:not(.uk-first-column):not(:first-child) {
     padding-left: 5px;
   }
-  .tab_btn-space-xs\!\@s > *:not(:first-child) {
+  .tab_btn-space-xs\!\@s > *:not(.uk-first-column):not(:first-child) {
     padding-left: 5px !important;
   }
-  .tab_btn-space-s\@s > *:not(:first-child) {
+  .tab_btn-space-s\@s > *:not(.uk-first-column):not(:first-child) {
     padding-left: 10px;
   }
-  .tab_btn-space-s\!\@s > *:not(:first-child) {
+  .tab_btn-space-s\!\@s > *:not(.uk-first-column):not(:first-child) {
     padding-left: 10px !important;
   }
 }
 
 @media (min-width: 960px) {
-  .tab_btn-space-xs\@m > *:not(:first-child) {
+  .tab_btn-space-xs\@m > *:not(.uk-first-column):not(:first-child) {
     padding-left: 5px;
   }
-  .tab_btn-space-xs\!\@m > *:not(:first-child) {
+  .tab_btn-space-xs\!\@m > *:not(.uk-first-column):not(:first-child) {
     padding-left: 5px !important;
   }
-  .tab_btn-space-s\@m > *:not(:first-child) {
+  .tab_btn-space-s\@m > *:not(.uk-first-column):not(:first-child) {
     padding-left: 10px;
   }
-  .tab_btn-space-s\!\@m > *:not(:first-child) {
+  .tab_btn-space-s\!\@m > *:not(.uk-first-column):not(:first-child) {
     padding-left: 10px !important;
   }
 }
 
 @media (min-width: 1200px) {
-  .tab_btn-space-xs\@l > *:not(:first-child) {
+  .tab_btn-space-xs\@l > *:not(.uk-first-column):not(:first-child) {
     padding-left: 5px;
   }
-  .tab_btn-space-xs\!\@l > *:not(:first-child) {
+  .tab_btn-space-xs\!\@l > *:not(.uk-first-column):not(:first-child) {
     padding-left: 5px !important;
   }
-  .tab_btn-space-s\@l > *:not(:first-child) {
+  .tab_btn-space-s\@l > *:not(.uk-first-column):not(:first-child) {
     padding-left: 10px;
   }
-  .tab_btn-space-s\!\@l > *:not(:first-child) {
+  .tab_btn-space-s\!\@l > *:not(.uk-first-column):not(:first-child) {
     padding-left: 10px !important;
   }
 }
 
 @media (min-width: 1600px) {
-  .tab_btn-space-xs\@xl > *:not(:first-child) {
+  .tab_btn-space-xs\@xl > *:not(.uk-first-column):not(:first-child) {
     padding-left: 5px;
   }
-  .tab_btn-space-xs\!\@xl > *:not(:first-child) {
+  .tab_btn-space-xs\!\@xl > *:not(.uk-first-column):not(:first-child) {
     padding-left: 5px !important;
   }
-  .tab_btn-space-s\@xl > *:not(:first-child) {
+  .tab_btn-space-s\@xl > *:not(.uk-first-column):not(:first-child) {
     padding-left: 10px;
   }
-  .tab_btn-space-s\!\@xl > *:not(:first-child) {
+  .tab_btn-space-s\!\@xl > *:not(.uk-first-column):not(:first-child) {
     padding-left: 10px !important;
   }
 }
@@ -82724,7 +82732,7 @@ nav.nav_reset {
 
 /*---------- Pagination ------------------------------*/
 .pagination a {
-  padding: 0 10px;
+  padding: 0 8px;
 }
 
 .pagination a:not(.disabled):hover, .pagination a:not(.disabled):hover * {

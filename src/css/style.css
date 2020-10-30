@@ -37,7 +37,7 @@ strong {
   }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1200px) {
   .logo > * {
     max-width: 650px;
   }

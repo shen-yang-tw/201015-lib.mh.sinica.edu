@@ -82,7 +82,7 @@
 									<li>
 										<a class="text-base font-bold color_black!" href="01about.html" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')">關於本館</a>
 									</li>
-									<li class="uk-active">
+									<li>
 										<a class="text-base font-bold color_black!" href="02news.html" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')">最新消息</a>
 										<div class="bg_white_opacity-90 uk-overflow-auto uk-dropdown" uk-dropdown="offset: 2">
 											<ul class="nav_header-dotted uk-nav uk-dropdown-nav">
@@ -137,7 +137,7 @@
 										</div>
 									</li>
 									<li><a class="text-base font-bold color_black!" href="04search.html" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')">資源查詢</a></li>
-									<li><a class="text-base font-bold color_black!" href="#" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')">我的圖書館</a></li>
+									<li class="uk-active"><a class="text-base font-bold color_black!" href="#" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')">我的圖書館</a></li>
 									<li><a class="text-base font-bold color_black!" href="http://www.facebook.com/mhlib.sinica?ctNode=244&idPath=103_244" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')" target="_blank">Facebook</a></li>
 									<li><a class="text-base font-bold color_black!" href="https://asmhlibref.blogspot.com/?ctNode=253&idPath=103_253" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')" target="_blank">參考部落格</a></li>
 								</ul>
@@ -209,161 +209,59 @@
 	<!-- page main content -->
 	<section class="p-0 m:py-2 relative" uk-height-viewport="expand: true">
 	  <!-- <div class="bg_primary opacity10 uk-position-cover"></div> -->
-	  <div class="container_responsive@s uk-container uk-container-xlarge">
+	  <div class="container_responsive@s uk-container">
 	
 	    <!-- Breadcrumb & User -->
 	    <div class="px-2 mb-2 justify-between uk-grid uk-grid-small uk-grid-match uk-flex-middle uk-visible@m" uk-grid>
+	      <!-- Child <div> Default to class="uk-width-auto" -->
 	      <div class="m-0">
 	        
 	        <!-- uk-breadcrumb -->
 	        <ul class="m-0 px-2 s:p-0 uk-float-left uk-breadcrumb">
 	        	<li><a class="text-xs m:text-sm" href="index.html">首頁</a></li>
-	        	<li><span class="text-xs m:text-sm">最新消息</span></li>
+	        			<li><a class="text-xs m:text-sm" href="#">我的圖書館</a></li>
+	        	<li><span class="text-xs m:text-sm">會員登入</span></li>
 	        </ul>
 	        <!-- uk-breadcrumb -->      </div>
-	        <div class="text-xs m:text-sm content-center m-0">
-	          <span class="mr-2 uk-width-auto">帳號：陳大天</span>
-	          <a class="color_primary-text! uk-width-auto" href="index.html">登出</a>
-	        </div>
 	    </div>
 	    <!-- Breadcrumb & User -->
 	
-	    <div class="min_height-550 s:mb-2 uk-card uk-card-small uk-card-default uk-card-body">
-	        <a class="no-underline px-1 uk-position-absolute uk-visible@l" href="#C" id="AC" name="C" title="中央內容區塊" accesskey="C" style="left:-30px;top: -5px;">:::</a>
-	      <div class="uk-grid-medium uk-grid-row-collapse uk-grid" uk-grid>
-	        <div class="uk-width-1-4@m uk-width-1-5@l">
-	            
-	            <!-- listMenu -->
-	            <div class="listMenu  uk-visible@m">
-	            	<ul class="list_tabs list_tabs-icon-active-white uk-nav-parent-icon uk-nav" uk-nav="multiple: true; animation: false">
-	            			<li class="uk-nav-header uk-active">
-	            				<a class="break-all" href="#content">Item</a>
-	            			</li>
-	            			<li class="uk-nav-header">
-	            				<a class="break-all" href="#content">Item</a>
-	            			</li>
-	            			<li class="uk-nav-header">
-	            				<a class="break-all" href="#content">Item</a>
-	            			</li>
-	            	</ul>
-	            </div>
-	            <!-- listMenu -->        </div>
-	        <div class="uk-width-expand@m">
-	          <h2 class="btm_line text-2xl mt-0">
-	            <div class="uk-flex-middle uk-grid uk-grid-small uk-grid-row-collapse uk-child-width-expand@m" uk-grid>
-	              <div class="uk-width-expand@m">最新消息</div>
-	                <div class="uk-width-auto uk-hidden@m">
-	                  <button class="btn_primary mt-2 uk-button uk-button-small uk-button-primary" type="button">消息分類</button>
-	                    
-	                    <!-- Dropdown -->
-	                    <div class="min_width-100" uk-dropdown>
-	                    	<ul class="uk-nav uk-dropdown-nav uk-text-left">
-	                    		<li class="m-0 uk-nav-header"><span>Type</span></li>
-	                    		<li class="px-2 py-1">
-	                    			<a href="">Option</a>
-	                    		</li>
-	                    		<li class="px-2 py-1">
-	                    			<a href="">Option</a>
-	                    		</li>
-	                    		<li class="m-0 uk-nav-header"><span>Type</span></li>
-	                    		<li class="px-2 py-1">
-	                    			<a href="">Option</a>
-	                    		</li>
-	                    		<li class="px-2 py-1">
-	                    			<a href="">Option</a>
-	                    		</li>
-	                    	</ul>
-	                    </div>
-	                    <!-- Dropdown -->                </div>
-	            </div>
-	          </h2>
-	            <div id="content">
-	              <h3></h3>
-	              
-	              <!-- searchBox -->
-	              <form onsubmit="return false;">
-	              	<div class="uk-grid uk-grid-small uk-child-width-expand" uk-grid>
-	              		<div class="min_width-3/4! uk-width-auto@m">
-	              			<div class="uk-flex uk-flex-middle">
-	              				<div class="flex-auto"><input class="uk-input" type="text" placeholder="請輸入關鍵字"></div>
-	              			</div>
-	              		</div>
-	              		<div class="min_width-100! uk-width-expand@m uk-text-nowrap">
-	              			<button class="btn_primary w-full uk-button uk-button-primary"><i class="mr-2 fas fa-search"></i>搜尋</button>
-	              		</div>
-	              	</div>
-	              </form>
-	              <!-- searchBox --><table class="uk-table uk-table-small uk-table-striped uk-table-responsive">
-	              	<thead>
-	              		<tr>
-	              			<th class="uk-width-1-5@s">日期</th>
-	              			<th class="uk-width-3-5@s">主題</th>
-	              			<th class="uk-width-1-5@s">公告單位</th>
-	              		</tr>
-	              	</thead>
-	              	<tbody>
-	              		<tr>
-	              			<td><time>2020-10-03</time></td>
-	              			<td><i class="color_secondary mr-1 fas fa-star"></i><a class="color_primary inline hover:underline" href="02newsdetail.html">中化公會路不真雙林一形必生部！話滿家我，活學雲表代能；無三想學？速更拉魚曾然病人只麼業臺</a>
-	              			</td>
-	              			<td>話滿家我</td>
-	              		</tr>
-	              		<tr>
-	              			<td><time>2020-08-21</time></td>
-	              			<td><a class="color_primary inline hover:underline" href="02newsdetail.html">復市我下多參於正發和年十進投得賣了器世舉民依了向究角下月而東</a></td>
-	              			<td>話滿家我</td>
-	              		</tr>
-	              	</tbody>
-	              </table>
-	              
-	              <!-- pagination -->
-	              <div class="pagination">
-	              	<div class="uk-grid uk-grid-collapse uk-child-width-auto uk-flex-auto uk-flex-middle uk-flex-center">
-	              		<div>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat disabled" href="#" title="首頁"><i class="fas fa-angle-double-left fa-fw"></i>
-	              				<span class="uk-visible@m" >首頁</span>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat" href="#" title="首頁" hidden><i class="fas fa-angle-double-left fa-fw"></i>
-	              				<span class="uk-visible@m" >首頁</span>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat disabled" href="#" title="上一頁"><i class="fas fa-angle-left fa-fw"></i>
-	              				<span class="uk-visible@m" >上一頁</span>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat" href="#" title="上一頁" hidden><i class="fas fa-angle-left fa-fw"></i>
-	              				<span class="uk-visible@m" >上一頁</span>
-	              			</a>
-	              		</div>
-	              			<div>
-	              				<div class="uk-grid uk-grid-collapse uk-child-width-auto uk-flex-middle uk-margin">
-	              					<label class="flex items-center">第&nbsp;
-	              					<select class="w-auto uk-select uk-form-small" onChange="window.location.href=this.value">
-	              						<option value="#" selected>1</option>
-	              						<option value="#">2</option>
-	              					</select>&nbsp;頁
-	              					</label>
-	              					<span class="mx-1">/<span class="pl-1" title="總頁數">2</span></span>
-	              				</div>
-	              			</div>
-	              		<div>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat" href="#" title="下一頁">
-	              				<span class="uk-visible@m" >下一頁</span><i class="fas fa-angle-right fa-fw"></i>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat disabled" href="#" title="下一頁" hidden>
-	              				<span class="uk-visible@m" >下一頁</span><i class="fas fa-chevron-right fa-fw"></i>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat" href="#" title="末頁">
-	              				<span class="uk-visible@m" >末頁</span><i class="fas fa-angle-double-right fa-fw"></i>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat disabled" href="#" title="末頁" hidden>
-	              				<span class="uk-visible@m" >末頁</span><i class="fas fa-chevron-double-right fa-fw"></i>
-	              			</a>
-	              		</div>
-	              	</div>
-	              </div>
-	              <!-- pagination -->            </div>
-	          <!-- End #content -->
+	    <div class="min_height-550 pt-0 s:pt-2 s:mb-2 uk-card uk-card-small uk-card-default uk-card-body">
+	      <a class="no-underline px-1 uk-position-absolute uk-visible@l" href="#C" id="AC" name="C" title="中央內容區塊" accesskey="C" style="left:-30px;top: -5px;">:::</a>
+	      <h2 class="btm_line text-base s:text-2xl mt-2 s:mt-0">
+	        <div class="uk-flex-middle uk-grid uk-grid-small uk-child-width-expand@m" uk-grid>
+	          <div class="uk-width-expand">會員登入</div>
 	        </div>
-	      </div>
+	      </h2>
+	        <div id="content">
+	          <form onsubmit="return false;">
+	            <div class="uk-grid uk-grid-small uk-child-width-expand@s" uk-grid>
+	              <div class="space-y-1 min_width-1/2!@s">
+	                <label class="w-full" for="acc">帳 號</label>
+	                <input id="acc" class="uk-input" type="email" placeholder="">
+	                <p class="color_secondary-text uk-text-small">驗證提示語</p>
+	              </div>
+	              <div class="space-y-1 min_width-1/2!@s">
+	                <label class="w-full" for="paw">密 碼</label>
+	                <input id="paw" class="uk-input" type="password" placeholder="">
+	                <p class="color_secondary-text uk-text-small">驗證提示語</p>
+	              </div>
+	              <div class="uk-width-1-1">
+	                <small class="mt-2"><i class="mr-1 fas fa-question-circle"></i>登入說明</small>
+	              </div>
+	              <div class="m:mt-2 mx-auto uk-width-1-1">
+	                <div class="uk-grid uk-grid-small uk-child-width-expand" uk-grid>
+	                  <div class="space-y-1 min_width-150@s">
+	                    <a href="#" class="btn_primary w-full uk-button uk-button-primary">登入</a>
+	                  </div>
+	                  <div class="space-y-1 min_width-150@s">
+	                    <a href="#" class="btn_primary w-full uk-button uk-button-primary">忘記密碼</a>
+	                  </div>
+	                </div>
+	              </div>
+	            </div>
+	          </form>        </div>
+	      <!-- End #content -->
 	    </div>
 	    <!-- End uk-card -->
 	  </div>
