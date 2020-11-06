@@ -1,0 +1,162 @@
+<!-- index main content -->
+<section id="content" class="space-y-4 relative" uk-height-viewport="expand: true">
+  {{!-- <div class="m:-mt-24 container_responsive@s uk-container">
+    <div class="bg_primary opacity-50 uk-position-cover"></div>
+    <p>台灣乳房植入物登錄系統(Taiwan Breast Implant Registry, TBIR)是
+      台灣衛生福利部食品藥物管理署的研究計畫，由臺北醫學大學研究團
+      隊承接，並與台灣整形外科醫學會合作共同建置而成，目的在於提供
+      乳房植入物手術者健康保障，並監控及提升乳房植入物的安全性。</p>
+  </div> --}}
+
+  <!-- Search -->
+  <div class="m-auto mb-8 shadow-md bg-white p-6 uk-width-2-3@m uk-width-1-2@xl">
+    {{>searchBox placeholder='請輸入檢索詞' only1button='true' bottomOption='true' leftText='true' leftTxt='縮小查詢範圍' checkbox='true' keywords='true' rightHref='true' rightTxt='進階查詢'}}
+  </div>
+  <!-- Search -->
+
+  <div class="m-auto uk-width-3-4@l uk-width-2-3@xl">
+    <div class="container_responsive@s uk-container">
+      {{#if hrefForAA}}
+      <div class="h-0 relative uk-visible@m"><a class="no-underline px-1 uk-position-absolute" href="#C" id="AC" name="C" title="中央內容區塊" accesskey="C" style="left:-30px; top:15px">:::</a></div>
+      {{/if}}
+      <div class="uk-grid uk-child-width-expand@m" uk-grid uk-height-match="target: .p-3.uk-card">
+        <div class="min_width-1/2!@m">
+          {{!-- <h2 class="color_primary uk-heading-line text-base uk-text-center"><span><i class="mr-2 fas fa-bullhorn"></i>最新消息</span></h2> --}}
+          {{!-- <div class="uk-flex uk-flex-between uk-flex-middle uk-flex-right">
+            <h2 class="bg_primary text-base m-0 p-2">主題典藏</h2>
+            <a class="text-xs" href="#" title="更多">More</a>
+          </div> --}}
+          <!-- uk-tab-button -->
+          <ul class="tab_btn tab_btn-noline tab_btn-active-white tab_btn-space-xs tab_btn-space-s@m m-0 uk-tab" uk-tab uk-margin>
+            <li><a href="#">主題典藏</a></li>
+          </ul>
+          <!-- uk-tab-button -->
+          <!-- uk-card -->
+          <div class="p-3 uk-card uk-card-default">
+            <ul class="m-0 uk-list uk-list-divider">
+              <li>
+                <div class="uk-grid uk-grid-small uk-child-width-expand@s" uk-grid>
+                  <div class="min_width-1/3! min_width-1/4!@s min_width-1/3!@l min_width-2/5!@xl uk-width-auto">
+                    <a class="block hover:shadow-md" href="">
+                      <div class="aspect ratio-3/4">
+                        {{!-- <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" style="background-image: url(img/book_01.jpg);"></div> --}}
+                        <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" data-src="https://fakeimg.pl/300x400/" uk-img></div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="uk-width-expand">
+                    <h3 class="color_primary m-0 pb-1 text-base font-bold">Title</h3>
+                    <time class="text-sm">2020-12-1</time>
+                    <p>了智會不相是能方物結，可率以認來過除建後相國得，評他石傳一手叫答成動時，類存沒務，形眾經來公狀入教裡青英運解仍強晚方真國的日</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="uk-grid uk-grid-small uk-child-width-expand@s" uk-grid>
+                  <div class="min_width-1/3! min_width-1/4!@s min_width-1/3!@l min_width-2/5!@xl uk-width-auto">
+                    <a class="block hover:shadow-md" href="">
+                      <div class="aspect ratio-3/4">
+                        {{!-- <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" style="background-image: url(img/book_01.jpg);"></div> --}}
+                        <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" data-src="img/book_01.jpg" uk-img></div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="uk-width-expand">
+                    <h3 class="color_primary m-0 pb-1 text-base font-bold">Title</h3>
+                    <time class="text-sm">2020-12-1</time>
+                    <p>了智會不相是能方物結，可率以認來過除建後相國得，評他石傳一手叫答成動時，類存沒務，形眾經來公狀入教裡青英運解仍強晚方真國的日</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- uk-card -->
+        </div>
+        <div class="min_width-1/2!@m">
+          <!-- uk-tab-button -->
+          <ul class="tab_btn tab_btn-noline tab_btn-active-white tab_btn-space-xs tab_btn-space-s@m m-0 uk-tab" uk-tab uk-margin>
+            <li><a href="#">熱門點閱</a></li>
+            <li><a href="#">熱門下載</a></li>
+          </ul>
+          <!-- uk-tab-button -->
+          <!-- uk-switcher -->
+          <ul class="uk-switcher">
+            <li>
+              <div class="p-3 uk-card uk-card-default">
+                <div class="uk-grid uk-grid-small uk-child-width-expand" uk-grid>
+                  <div class="min_width-1/2! min_width-1/3!@s">
+                    <a class="block hover:shadow-md" href="">
+                      <div class="aspect ratio-3/4">
+                        {{!-- <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" style="background-image: url(img/book_01.jpg);"></div> --}}
+                        <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" data-src="https://fakeimg.pl/300x400/" uk-img></div>
+                      </div>
+                    </a>
+                    <h3 class="color_primary m-0 pt-1 text-sm font-bold">Title</h3>
+                    <p class="text-xs m-0">點閱率：<small class="color_secondary">234</small></p>
+                  </div>
+                  <div class="min_width-1/2! min_width-1/3!@s">
+                    <a class="block hover:shadow-md" href="">
+                      <div class="aspect ratio-3/4">
+                        {{!-- <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" style="background-image: url(img/book_01.jpg);"></div> --}}
+                        <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" data-src="img/book.svg" uk-img></div>
+                      </div>
+                    </a>
+                    <h3 class="color_primary m-0 pt-1 text-sm font-bold">Title</h3>
+                    <p class="text-xs m-0">點閱率：<small class="color_secondary">234</small></p>
+                  </div>
+                  <div class="min_width-1/2! min_width-1/3!@s">
+                    <a class="block hover:shadow-md" href="">
+                      <div class="aspect ratio-3/4">
+                        {{!-- <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" style="background-image: url(img/book_01.jpg);"></div> --}}
+                        <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" data-src="img/book_02.jpg" uk-img></div>
+                      </div>
+                    </a>
+                    <h3 class="color_primary m-0 pt-1 text-sm font-bold">Title</h3>
+                    <p class="text-xs m-0">點閱率：<small class="color_secondary">234</small></p>
+                  </div>
+                  <div class="min_width-1/2! min_width-1/3!@s">
+                    <a class="block hover:shadow-md" href="">
+                      <div class="aspect ratio-3/4">
+                        {{!-- <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" style="background-image: url(img/book_01.jpg);"></div> --}}
+                        <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" data-src="img/book_03.jpg" uk-img></div>
+                      </div>
+                    </a>
+                    <h3 class="color_primary m-0 pt-1 text-sm font-bold">Title</h3>
+                    <p class="text-xs m-0">點閱率：<small class="color_secondary">234</small></p>
+                  </div>
+                  <div class="min_width-1/2! min_width-1/3!@s">
+                    <a class="block hover:shadow-md" href="">
+                      <div class="aspect ratio-3/4">
+                        {{!-- <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" style="background-image: url(img/book_01.jpg);"></div> --}}
+                        <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" data-src="img/book_04.jpg" uk-img></div>
+                      </div>
+                    </a>
+                    <h3 class="color_primary m-0 pt-1 text-sm font-bold">Title</h3>
+                    <p class="text-xs m-0">點閱率：<small class="color_secondary">234</small></p>
+                  </div>
+                  <div class="min_width-1/2! min_width-1/3!@s">
+                    <a class="block hover:shadow-md" href="">
+                      <div class="aspect ratio-3/4">
+                        {{!-- <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" style="background-image: url(img/book_01.jpg);"></div> --}}
+                        <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" data-src="img/book_05.jpg" uk-img></div>
+                      </div>
+                    </a>
+                    <h3 class="color_primary m-0 pt-1 text-sm font-bold">Title</h3>
+                    <p class="text-xs m-0">點閱率：<small class="color_secondary">234</small></p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="p-3 hover:shadow-2xl uk-card uk-card-default">
+
+              </div>
+            </li>
+          </ul>
+          <!-- uk-switcher -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- index main content -->
