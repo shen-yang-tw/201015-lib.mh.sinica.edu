@@ -385,6 +385,7 @@
 	          			<th class="w-2/5 uk-text-nowrap">刊名</th>
 	          			<th class="uk-text-nowrap">卷期</th>
 	          			<th class="uk-text-nowrap">全文</th>
+	          			<th class="uk-text-nowrap">簡介</th>
 	          		</tr>
 	          	</thead>
 	          	<tbody>
@@ -398,6 +399,10 @@
 	          			</td>
 	          			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">卷期</span>第74卷</td>
 	          			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">全文</span><a class="color_primary hover:underline" href="#">采昌國際多媒體</a></td>
+	          			<td>
+	          				<span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">簡介</span>
+	          				<a class="color_primary" href="#detail" uk-toggle><i class="color_primary mr-1 fas fa-info-circle fa-lg" title="詳細內容"></i><span class="sr-only">詳細內容</span></a>
+	          			</td>
 	          		</tr>
 	          		<tr>
 	          			<td class="uk-visible@m"><label><input class="listCheck uk-checkbox" type="checkbox"><span class="pl-1 sr-only">02</span></label></td>
@@ -409,6 +414,10 @@
 	          			</td>
 	          			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">卷期</span>第74卷</td>
 	          			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">全文</span><a class="color_primary hover:underline" href="#">采昌國際多媒體</a></td>
+	          			<td>
+	          				<span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">簡介</span>
+	          				<a class="color_primary" href="#detail2" uk-toggle><i class="color_primary mr-1 fas fa-info-circle fa-lg" title="詳細內容"></i><span class="sr-only">詳細內容</span></a>
+	          			</td>
 	          		</tr>
 	          	</tbody>
 	          </table>
@@ -457,7 +466,41 @@
 	          		</div>
 	          	</div>
 	          </div>
-	          <!-- pagination -->        </div>
+	          <!-- pagination -->
+	          <!-- uk-modal-print -->
+	          <div id="detail" class="uk-flex-top uk-modal-container" uk-modal>
+	          	<div class="uk-modal-dialog uk-margin-auto-vertical">
+	          		<button class="uk-modal-close-default" type="button" title="刪除" uk-close></button>
+	          		<div class="uk-modal-header">
+	          			<p class="text-2xl font-bold uk-modal-title">標題名稱</p>
+	          		</div>
+	          		<div class="uk-modal-body">
+	          			<p class="mt-0">詳細內容</p>
+	          		</div>
+	          		<div class="text-center uk-modal-footer" uk-margin>
+	          			<button class="min_width-100 uk-button uk-button-default uk-modal-close" type="button">關　　閉</button>
+	          		</div>
+	          	</div>
+	          </div>
+	          <!-- uk-modal-print -->
+	          
+	          <!-- uk-modal-print -->
+	          <div id="detail2" class="uk-flex-top uk-modal-container" uk-modal>
+	          	<div class="uk-modal-dialog uk-margin-auto-vertical">
+	          		<button class="uk-modal-close-default" type="button" title="刪除" uk-close></button>
+	          		<div class="uk-modal-header">
+	          			<p class="text-2xl font-bold uk-modal-title">標題名稱2</p>
+	          		</div>
+	          		<div class="uk-modal-body">
+	          			<p class="mt-0">詳細內容</p>
+	          		</div>
+	          		<div class="text-center uk-modal-footer" uk-margin>
+	          			<button class="min_width-100 uk-button uk-button-default uk-modal-close" type="button">關　　閉</button>
+	          		</div>
+	          	</div>
+	          </div>
+	          <!-- uk-modal-print -->
+	        </div>
 	      <!-- End #content -->
 	    </div>
 	    <!-- End uk-card -->

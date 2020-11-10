@@ -10,19 +10,20 @@
 	<meta name="Designer&Developer" content="楊軒羽 Shen Yang | Graphic Web Designer & Front-end Developer | 前端設計工程師">
 	<title>中研院近史所圖書館</title>
 	<link rel="stylesheet" href="css/uikit.min.css">
-	<link rel="stylesheet" href="css/tailwind.css">
+	<link rel="stylesheet" href="css/tailwind.min.css">
 	<link rel="stylesheet" href="css/fontawesome.min.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/colors.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/editor.css">
+	<link rel="stylesheet" href="css/main.min.css">
+	<link rel="stylesheet" href="css/colors.min.css">
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/editor.min.css">
+	<link rel="stylesheet" href="css/editor.min.css">
 	<script src="js/uikit-icons.min.js"></script>
 	<script src="js/uikit.min.js"></script>
-	<script src="js/script.js" defer></script>
-	<script src="js/nav-menu-basic.js" defer></script>
+	<script src="js/script.min.js" defer></script>
+	<script src="js/nav-menu-basic.min.js" defer></script>
 </head>
 
-<body id="top" class="page">
+<body id="top" class="index">
 	<!-- header -->
 	<header class="">
 		<div class="uk-sticky" uk-sticky="media: (max-width: 959px); cls-active: shadow-xl bg-white">
@@ -82,7 +83,7 @@
 									<li>
 										<a class="text-base font-bold color_black!" href="01about.html" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')">關於本館</a>
 									</li>
-									<li class="uk-active">
+									<li>
 										<a class="text-base font-bold color_black!" href="02news.html" onmouseover="viewHeight('.nav_bar [uk-dropdown]', 'header')">最新消息</a>
 										<div class="bg_white_opacity-90 uk-overflow-auto uk-dropdown" uk-dropdown="offset: 2">
 											<ul class="nav_header-dotted uk-nav uk-dropdown-nav">
@@ -205,219 +206,189 @@
 		</div>
 	</header>
 	<!-- header -->
+	<!-- index main content -->
+	<section id="content" class="space-y-4 relative" uk-height-viewport="expand: true">
 	
-	<!-- page main content -->
-	<section class="p-0 m:py-2 relative" uk-height-viewport="expand: true">
-	  <!-- <div class="bg_primary opacity10 uk-position-cover"></div> -->
-	  <div class="container_responsive@s uk-container uk-container-xlarge">
+	  <!-- Search -->
+	  <div class="m-auto mb-8 shadow-md bg-white p-6 uk-width-2-3@m uk-width-1-2@xl">
+	    
+	    <!-- searchBox -->
+	    <form onsubmit="return false;">
+	    	<div class="uk-grid uk-grid-small uk-child-width-expand" uk-grid>
+	    		<div class="min_width-3/4! uk-width-auto@s">
+	    			<div class="uk-flex uk-flex-middle">
+	    				<div class="flex-auto"><input class="uk-input" type="text" placeholder="請輸入檢索詞"></div>
+	    			</div>
+	    		</div>
+	    		<div class="min_width-100! min_width-150!@l uk-width-expand@s uk-text-nowrap">
+	    			<button class="btn_primary w-full uk-button uk-button-primary"><i class="mr-2 fas fa-search"></i>搜尋</button>
+	    		</div>
+	    		<div class="m-0 uk-width-1-1">
+	    			<div class="mt-1 uk-clearfix">
+	    				<div class="float-left">縮小查詢範圍</div>
+	    				<div class="float-right"><a class="color_primary" href="#">進階查詢</a></div>
+	    			</div>
+	    			<div class="mt-1">
+	    				<div class="flex">
+	    					<span class="flex-none">資料類型：</span>
+	    					<div>
+	    						<label class="mr-4"><input class="mr-1 uk-checkbox" type="checkbox">數位檔</label>
+	    						<label class="mr-4"><input class="mr-1 uk-checkbox" type="checkbox">報紙</label>
+	    						<label class="mr-4"><input class="mr-1 uk-checkbox" type="checkbox">剪報</label>
+	    						<label class="mr-4"><input class="mr-1 uk-checkbox" type="checkbox">公報</label>
+	    						<label class="mr-4"><input class="mr-1 uk-checkbox" type="checkbox">期刊</label>
+	    						<label class="mr-4"><input class="mr-1 uk-checkbox" type="checkbox">圖書</label>
+	    						<label class="mr-4"><input class="mr-1 uk-checkbox" type="checkbox">檔案</label>
+	    					</div>
+	    				</div>
+	    			</div>
+	    			<div class="mt-1">
+	    				<span>數位檔：</span>
+	    				<label class="mr-4"><input class="mr-1 uk-checkbox" type="checkbox">只搜尋有數位檔案的資料</label>
+	    			</div>
+	    			<div class="mt-1">
+	    				<span>熱門關鍵詞：</span>
+	    				<span class="pseudo:comma_ch"><a class="underline" href="#">每議人已識影</a></span>
+	    				<span class="pseudo:comma_ch"><a class="underline" href="#">期異回麼響</a></span>
+	    				<span class="pseudo:comma_ch"><a class="underline" href="#">研能感表</a></span>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </form>
+	    <!-- searchBox -->  </div>
+	  <!-- Search -->
 	
-	    <!-- Breadcrumb & User -->
-	    <div class="px-2 mb-2 justify-between uk-grid uk-grid-small uk-grid-match uk-flex-middle uk-visible@m" uk-grid>
-	      <div class="m-0">
-	        
-	        <!-- uk-breadcrumb -->
-	        <ul class="m-0 px-2 s:p-0 uk-float-left uk-breadcrumb">
-	        	<li><a class="text-xs m:text-sm" href="index.html">首頁</a></li>
-	        			<li><a class="text-xs m:text-sm" href="#">Link1</a></li>
-	        			<li><a class="text-xs m:text-sm" href="#">Link2</a></li>
-	        	<li><span class="text-xs m:text-sm">Current</span></li>
-	        </ul>
-	        <!-- uk-breadcrumb -->      </div>
-	        <div class="text-xs m:text-sm content-center m-0">
-	          <span class="mr-2 uk-width-auto">帳號：陳大天</span>
-	          <a class="color_primary-text! uk-width-auto" href="index.html">登出</a>
+	  <div class="m-auto uk-width-3-4@l uk-width-2-3@xl">
+	    <div class="container_responsive@s uk-container">
+	      <div class="h-0 relative uk-visible@m"><a class="no-underline px-1 uk-position-absolute" href="#C" id="AC" name="C" title="中央內容區塊" accesskey="C" style="left:-30px; top:15px">:::</a></div>
+	      <div class="uk-grid uk-child-width-expand@m" uk-grid uk-height-match="target: .p-3.uk-card">
+	        <div class="min_width-1/2!@m">
+	          <!-- uk-tab-button -->
+	          <ul class="tab_btn tab_btn-noline tab_btn-active-white tab_btn-space-xs tab_btn-space-s@m m-0 uk-tab" uk-tab uk-margin>
+	            <li><a href="#">主題典藏</a></li>
+	          </ul>
+	          <!-- uk-tab-button -->
+	          <!-- uk-card -->
+	          <div class="p-3 uk-card uk-card-default">
+	            <ul class="m-0 uk-list uk-list-divider">
+	              <li>
+	                <div class="uk-grid uk-grid-small uk-child-width-expand@s" uk-grid>
+	                  <div class="min_width-1/3! min_width-1/4!@s min_width-1/3!@l min_width-2/5!@xl uk-width-auto">
+	                    <a class="block hover:shadow-md" href="">
+	                      <div class="aspect ratio-3/4">
+	                        <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" data-src="https://fakeimg.pl/300x400/" uk-img></div>
+	                      </div>
+	                    </a>
+	                  </div>
+	                  <div class="uk-width-expand">
+	                    <h3 class="color_primary m-0 pb-1 text-base font-bold">Title</h3>
+	                    <time class="text-sm">2020-12-1</time>
+	                    <p>了智會不相是能方物結，可率以認來過除建後相國得，評他石傳一手叫答成動時，類存沒務，形眾經來公狀入教裡青英運解仍強晚方真國的日</p>
+	                  </div>
+	                </div>
+	              </li>
+	              <li>
+	                <div class="uk-grid uk-grid-small uk-child-width-expand@s" uk-grid>
+	                  <div class="min_width-1/3! min_width-1/4!@s min_width-1/3!@l min_width-2/5!@xl uk-width-auto">
+	                    <a class="block hover:shadow-md" href="">
+	                      <div class="aspect ratio-3/4">
+	                        <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" data-src="img/book_01.jpg" uk-img></div>
+	                      </div>
+	                    </a>
+	                  </div>
+	                  <div class="uk-width-expand">
+	                    <h3 class="color_primary m-0 pb-1 text-base font-bold">Title</h3>
+	                    <time class="text-sm">2020-12-1</time>
+	                    <p>了智會不相是能方物結，可率以認來過除建後相國得，評他石傳一手叫答成動時，類存沒務，形眾經來公狀入教裡青英運解仍強晚方真國的日</p>
+	                  </div>
+	                </div>
+	              </li>
+	            </ul>
+	          </div>
+	          <!-- uk-card -->
 	        </div>
-	    </div>
-	    <!-- Breadcrumb & User -->
-	
-	    <div class="min_height-550 s:mb-2 uk-card uk-card-small uk-card-default uk-card-body">
-	        <a class="no-underline px-1 uk-position-absolute uk-visible@l" href="#C" id="AC" name="C" title="中央內容區塊" accesskey="C" style="left:-30px;top: -5px;">:::</a>
-	      <div class="uk-grid-medium uk-grid-row-collapse uk-grid" uk-grid>
-	        <div class="uk-width-1-4@m uk-width-1-5@l">
-	            <div class="uk-visible@m" style="height: 8px;"></div>
-	            <p class="btm_line text-xl mt-0 uk-visible@m">新書通報</p>
-	            
-	            <!-- listMenu -->
-	            <div class="listMenu  uk-visible@m">
-	            	<ul class="list_tabs list_tabs-icon-active-white uk-nav-parent-icon uk-nav" uk-nav="multiple: true; animation: false">
-	            		<li class="uk-nav-header uk-active">
-	            			<a class="break-all" href="#content">Item</a>
-	            		</li>
-	            		<li class="uk-nav-header">
-	            			<a class="break-all" href="#content">Item</a>
-	            		</li>
-	            		<li class="uk-nav-header">
-	            			<a class="break-all" href="#content">Item</a>
-	            		</li>
-	            	</ul>
-	            </div>
-	            <!-- listMenu -->        </div>
-	        <div class="uk-width-expand@m">
-	          <h2 class="btm_line text-2xl mt-0">
-	            <div class="justify-between uk-flex-middle uk-grid uk-grid-small uk-grid-row-collapse uk-child-width-expand@m" uk-grid>
-	              <div class="uk-width-expand@m">中文新到館藏</div>
-	                <div class="uk-width-auto"><a class="btn_primary uk-button uk-button-small uk-button-primary" href="#"><i class="mr-2 far fa-envelope"></i>訂閱新書通知</a></div>
-	                <div class="uk-width-auto uk-hidden@m">
-	                  <button class="btn_primary uk-button uk-button-small uk-button-primary" type="button">新書通報</button>
-	                    
-	                    <!-- Dropdown -->
-	                    <div class="min_width-100" uk-dropdown>
-	                    	<ul class="uk-nav uk-dropdown-nav uk-text-left">
-	                    		<li class="m-0 uk-nav-header"><span>Type</span></li>
-	                    		<li class="px-2 py-1">
-	                    			<a href="">Option</a>
-	                    		</li>
-	                    		<li class="px-2 py-1">
-	                    			<a href="">Option</a>
-	                    		</li>
-	                    		<li class="m-0 uk-nav-header"><span>Type</span></li>
-	                    		<li class="px-2 py-1">
-	                    			<a href="">Option</a>
-	                    		</li>
-	                    		<li class="px-2 py-1">
-	                    			<a href="">Option</a>
-	                    		</li>
-	                    	</ul>
-	                    </div>
-	                    <!-- Dropdown -->                </div>
-	            </div>
-	          </h2>
-	            <div id="content">
-	              <h3></h3>
-	              
-	              <!-- searchBox -->
-	              <form onsubmit="return false;">
-	              	<div class="uk-grid uk-grid-small uk-child-width-expand" uk-grid>
-	              		<div class="min_width-2/3! min_width-1/6!@m min_width-1/3!@l">
-	              			<div class="uk-flex uk-flex-middle">
-	              				<div class="flex-auto"><input class="uk-input" type="text" placeholder="請輸入關鍵字"></div>
-	              			</div>
-	              		</div>
-	              		<div class="min_width-1/2! min_width-2/3!@s min_width-1/2!@m uk-width-auto@s">
-	              			<div class="uk-grid uk-grid-small uk-child-width-expand" uk-grid>
-	              				<div>
-	              					<select class="uk-select">
-	              						<option value="0" selected>-年-</option>
-	              						<option value="">2020</option>
-	              					</select>
-	              				</div>
-	              				<div>
-	              					<select class="uk-select">
-	              						<option value="0" selected>-月-</option>
-	              						<option value="">9</option>
-	              					</select>
-	              				</div>
-	              				<div>
-	              					<select class="uk-select">
-	              						<option value="0" selected>-類別-</option>
-	              						<option value="">全部</option>
-	              					</select>
-	              				</div>
-	              			</div>
-	              		</div>
-	              		<div class="min_width-100! min_width-150!@l uk-width-expand@s uk-text-nowrap">
-	              			<button class="btn_primary w-full uk-button uk-button-primary"><i class="mr-2 fas fa-search"></i>搜尋</button>
-	              		</div>
-	              	</div>
-	              </form>
-	              <!-- searchBox --><small class="mt-2">共計<span class="color_secondary">466</span>筆資料</small>
-	              <table class="mt-0 uk-table uk-table-small uk-table-striped uk-table-responsive">
-	              	<thead>
-	              		<tr>
-	              			<th class="uk-text-nowrap">項次</th>
-	              			<th class="uk-text-nowrap">圖片</th>
-	              			<th class="w-1/6 uk-text-nowrap">書名</th>
-	              			<th class="uk-text-nowrap">作者</th>
-	              			<th class="uk-text-nowrap">出版社</th>
-	              			<th class="uk-text-nowrap">索書號</th>
-	              			<th class="uk-text-nowrap">ISBN</th>
-	              		</tr>
-	              	</thead>
-	              	<tbody>
-	              		<tr>
-	              			<td>01</td>
-	              			<td><img data-src="https://fakeimg.pl/90x120/" width="90" height="120" alt="" uk-img></td>
-	              			<td>
-	              				<a class="color_primary hover:underline" href="#">
-	              					中化公會路不真雙林一形必生部
-	              				</a>
-	              			</td>
-	              			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">作者</span>Justin Baldoni</td>
-	              			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">出版社</span>采昌國際多媒體</td>
-	              			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">索書號</span><time>202.00 9201 2020</time>
-	              			</td>
-	              			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">ISBN</span>9789865024864</td>
-	              		</tr>
-	              		<tr>
-	              			<td>02</td>
-	              			<td><img data-src="img/book.svg" width="90" height="120" alt="" uk-img></td>
-	              			<td>
-	              				<a class="color_primary hover:underline" href="#">
-	              					中化公會路不真雙林一形必生部
-	              				</a>
-	              			</td>
-	              			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">作者</span>Justin Baldoni</td>
-	              			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">出版社</span>采昌國際多媒體</td>
-	              			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">索書號</span><time>202.00 9201 2020</time>
-	              			</td>
-	              			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">ISBN</span>9789865024864</td>
-	              		</tr>
-	              	</tbody>
-	              </table>
-	              
-	              <!-- pagination -->
-	              <div class="pagination">
-	              	<div class="uk-grid uk-grid-collapse uk-child-width-auto uk-flex-auto uk-flex-middle uk-flex-center">
-	              		<div>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat disabled" href="#" title="首頁"><i class="fas fa-angle-double-left fa-fw"></i>
-	              				<span class="uk-visible@m" >首頁</span>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat" href="#" title="首頁" hidden><i class="fas fa-angle-double-left fa-fw"></i>
-	              				<span class="uk-visible@m" >首頁</span>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat disabled" href="#" title="上一頁"><i class="fas fa-angle-left fa-fw"></i>
-	              				<span class="uk-visible@m" >上一頁</span>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat" href="#" title="上一頁" hidden><i class="fas fa-angle-left fa-fw"></i>
-	              				<span class="uk-visible@m" >上一頁</span>
-	              			</a>
-	              		</div>
-	              			<div>
-	              				<div class="uk-grid uk-grid-collapse uk-child-width-auto uk-flex-middle uk-margin">
-	              					<label class="flex items-center">第&nbsp;
-	              					<select class="w-auto uk-select uk-form-small" onChange="window.location.href=this.value">
-	              						<option value="#" selected>1</option>
-	              						<option value="#">2</option>
-	              					</select>&nbsp;頁
-	              					</label>
-	              					<span class="mx-1">/<span class="pl-1" title="總頁數">2</span></span>
-	              				</div>
-	              			</div>
-	              		<div>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat" href="#" title="下一頁">
-	              				<span class="uk-visible@m" >下一頁</span><i class="fas fa-angle-right fa-fw"></i>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat disabled" href="#" title="下一頁" hidden>
-	              				<span class="uk-visible@m" >下一頁</span><i class="fas fa-chevron-right fa-fw"></i>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat" href="#" title="末頁">
-	              				<span class="uk-visible@m" >末頁</span><i class="fas fa-angle-double-right fa-fw"></i>
-	              			</a>
-	              			<a class="color_grey no-underline hover:bg-transparent btn btn-flat disabled" href="#" title="末頁" hidden>
-	              				<span class="uk-visible@m" >末頁</span><i class="fas fa-chevron-double-right fa-fw"></i>
-	              			</a>
-	              		</div>
-	              	</div>
+	        <div class="min_width-1/2!@m">
+	          <!-- uk-tab-button -->
+	          <ul class="tab_btn tab_btn-noline tab_btn-active-white tab_btn-space-xs tab_btn-space-s@m m-0 uk-tab" uk-tab uk-margin>
+	            <li><a href="#">熱門點閱</a></li>
+	            <li><a href="#">熱門下載</a></li>
+	          </ul>
+	          <!-- uk-tab-button -->
+	          <!-- uk-switcher -->
+	          <ul class="uk-switcher">
+	            <li>
+	              <div class="p-3 uk-card uk-card-default">
+	                <div class="uk-grid uk-grid-small uk-child-width-expand" uk-grid>
+	                  <div class="min_width-1/2! min_width-1/3!@s">
+	                    <a class="block hover:shadow-md" href="">
+	                      <div class="aspect ratio-3/4">
+	                        <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" data-src="https://fakeimg.pl/300x400/" uk-img></div>
+	                      </div>
+	                    </a>
+	                    <h3 class="color_primary m-0 pt-1 text-sm font-bold">Title</h3>
+	                    <p class="text-xs m-0">點閱率：<small class="color_secondary">234</small></p>
+	                  </div>
+	                  <div class="min_width-1/2! min_width-1/3!@s">
+	                    <a class="block hover:shadow-md" href="">
+	                      <div class="aspect ratio-3/4">
+	                        <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" data-src="img/book.svg" uk-img></div>
+	                      </div>
+	                    </a>
+	                    <h3 class="color_primary m-0 pt-1 text-sm font-bold">Title</h3>
+	                    <p class="text-xs m-0">點閱率：<small class="color_secondary">234</small></p>
+	                  </div>
+	                  <div class="min_width-1/2! min_width-1/3!@s">
+	                    <a class="block hover:shadow-md" href="">
+	                      <div class="aspect ratio-3/4">
+	                        <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" data-src="img/book_02.jpg" uk-img></div>
+	                      </div>
+	                    </a>
+	                    <h3 class="color_primary m-0 pt-1 text-sm font-bold">Title</h3>
+	                    <p class="text-xs m-0">點閱率：<small class="color_secondary">234</small></p>
+	                  </div>
+	                  <div class="min_width-1/2! min_width-1/3!@s">
+	                    <a class="block hover:shadow-md" href="">
+	                      <div class="aspect ratio-3/4">
+	                        <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" data-src="img/book_03.jpg" uk-img></div>
+	                      </div>
+	                    </a>
+	                    <h3 class="color_primary m-0 pt-1 text-sm font-bold">Title</h3>
+	                    <p class="text-xs m-0">點閱率：<small class="color_secondary">234</small></p>
+	                  </div>
+	                  <div class="min_width-1/2! min_width-1/3!@s">
+	                    <a class="block hover:shadow-md" href="">
+	                      <div class="aspect ratio-3/4">
+	                        <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" data-src="img/book_04.jpg" uk-img></div>
+	                      </div>
+	                    </a>
+	                    <h3 class="color_primary m-0 pt-1 text-sm font-bold">Title</h3>
+	                    <p class="text-xs m-0">點閱率：<small class="color_secondary">234</small></p>
+	                  </div>
+	                  <div class="min_width-1/2! min_width-1/3!@s">
+	                    <a class="block hover:shadow-md" href="">
+	                      <div class="aspect ratio-3/4">
+	                        <div class="uk-background-contain uk-flex uk-flex-center uk-flex-middle" data-src="img/book_05.jpg" uk-img></div>
+	                      </div>
+	                    </a>
+	                    <h3 class="color_primary m-0 pt-1 text-sm font-bold">Title</h3>
+	                    <p class="text-xs m-0">點閱率：<small class="color_secondary">234</small></p>
+	                  </div>
+	                </div>
 	              </div>
-	              <!-- pagination -->            </div>
-	          <!-- End #content -->
+	            </li>
+	            <li>
+	              <div class="p-3 hover:shadow-2xl uk-card uk-card-default">
+	
+	              </div>
+	            </li>
+	          </ul>
+	          <!-- uk-switcher -->
 	        </div>
 	      </div>
 	    </div>
-	    <!-- End uk-card -->
 	  </div>
 	</section>
-	<!-- page main content -->
+	<!-- index main content -->
 	<!-- footer -->
 	<div id="footer" class="relative">
 		<div class="p-3">

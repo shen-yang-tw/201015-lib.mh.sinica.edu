@@ -21,6 +21,7 @@
 			<th class="w-3/5 uk-text-nowrap">刊名</th>
 			<th class="uk-text-nowrap">卷期</th>
 			<th class="uk-text-nowrap">全文</th>
+			<th class="uk-text-nowrap">簡介</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -34,6 +35,10 @@
 			</td>
 			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">卷期</span>第74卷</td>
 			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">全文</span><a class="color_primary hover:underline" href="#">期刊網站</a></td>
+			<td>
+				<span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">簡介</span>
+				<a class="color_primary" href="#detail" uk-toggle><i class="color_primary mr-1 fas fa-info-circle fa-lg" title="詳細內容"></i><span class="sr-only">詳細內容</span></a>
+			</td>
 		</tr>
 		<tr>
 			<td class="uk-visible@m"><label><input class="listCheck uk-checkbox" type="checkbox"><span class="pl-1 sr-only">02</span></label></td>
@@ -45,7 +50,13 @@
 			</td>
 			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">卷期</span>第74卷</td>
 			<td><span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">全文</span><a class="color_primary hover:underline" href="#">期刊網站</a></td>
+			<td>
+				<span class="mr-2 px-2 bg_black_opacity-15 text-black text-sm uk-hidden@m">簡介</span>
+				<a class="color_primary" href="#detail" uk-toggle><i class="color_primary mr-1 fas fa-info-circle fa-lg" title="詳細內容"></i><span class="sr-only">詳細內容</span></a>
+			</td>
 		</tr>
 	</tbody>
 </table>
 {{>pagination pageArrowText='true' pageSelect='true' pageSum='2'}}
+{{>content-modal id='detail' wide='true' modal-title='標題名稱'}}
+{{>content-modal id='detail2' wide='true' modal-title='標題名稱2'}}
