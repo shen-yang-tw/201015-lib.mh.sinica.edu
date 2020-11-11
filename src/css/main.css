@@ -83371,6 +83371,10 @@ address, dl, fieldset, figure, ol, p, pre, ul {
   padding-top: 40px !important;
 }
 
+.uk-offcanvas-bar * {
+  word-break: break-all;
+}
+
 .uk-offcanvas-close {
   top: 10px;
 }
