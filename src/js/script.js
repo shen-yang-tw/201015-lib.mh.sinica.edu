@@ -487,14 +487,14 @@ function checkedSum(inputCheck, checkAll, resetButton, textSum) {
 function tableWidth(el) {
   var target = document.querySelectorAll(el)
   if (window.innerWidth <= 959 || document.documentElement.clientWidth <= 959) {
-    for (var i = 0; i < target.length; i++) {
+    for (var i = 0;i < target.length;i++) {
       target[i].style.setProperty('width', '100%', 'important')
       if (target[i].getAttribute('width') != null) {
         target[i].setAttribute('width', 'auto')
       }
       var th = target[i].querySelectorAll('th')
       var td = target[i].querySelectorAll('td')
-      for (var j = 0; j < th.length; j++) {
+      for (var j = 0;j < th.length;j++) {
         if (th[j].style.width != null) {
           th[j].style.setProperty('width', 'auto', 'important')
         }
@@ -502,7 +502,7 @@ function tableWidth(el) {
           th[j].setAttribute('width', 'auto')
         }
       }
-      for (var k = 0; k < td.length; k++) {
+      for (var k = 0;k < td.length;k++) {
         if (td[k].style.width != null) {
           td[k].style.setProperty('width', 'auto')
         }
@@ -511,16 +511,30 @@ function tableWidth(el) {
         }
       }
     }
+    for (var i = 0;i < target.length;i++) {
+      var columns = target[i].querySelector('thead tr').childElementCount
+      // IF the columns of table is 6 or greater than 6, add the parent <div class="uk-overflow-auto">
+      if (columns >= 6) {
+        var parent = target[i].parentNode //Parent of the target
+        var wrapper = document.createElement('div') // It's a method not element
+        // set the wrapper as child (instead of the element)
+        parent.replaceChild(wrapper, target[i])
+        wrapper.classList.add('uk-overflow-auto')
+        // set element as child of wrapper
+        wrapper.appendChild(target[i])
+        target[i].classList.add('scroll_table', 'min_width-600', 'min_width-700@s', 'min_width-1000@m')
+      }
+    }
   } else {
-    for (var i = 0; i < target.length; i++) {
+    for (var i = 0;i < target.length;i++) {
       if (target[i].getAttribute('width') >= target[i].parentElement.offsetWidth) {
         target[i].setAttribute('width', 'auto')
       }
     }
   }
 }
-if (oneExist('.editor table')) {
-  tableWidth('.editor table')
+if (oneExist('.ckeditor table')) {
+  tableWidth('.ckeditor table')
 }
 //------------- End Table in editor ------------------------------------------------//
 
