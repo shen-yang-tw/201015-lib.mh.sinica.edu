@@ -80,8 +80,8 @@ body {
 
 /*---------- Link ------------------------------*/
 a, button {
-  &#{$color-exclude}, &#{$color-exclude}:visited, &#{$color-exclude}:focus, nav &#{$color-exclude} {color:$color-link;}
-  &#{$color-exclude}:hover, &#{$color-exclude}:hover * {color:$color-link-hover;}
+  &#{$color-exclude}, &#{$color-exclude}:visited, &#{$color-exclude}:focus, nav &#{$color-exclude} {color:$color-primary;}
+  &#{$color-exclude}:hover, &#{$color-exclude}:hover * {color:darken($color-primary, 20%);}
 }
 
 /* Remove outline for non-keyboard :focus */
