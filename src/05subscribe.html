@@ -10,15 +10,15 @@
 	<meta name="Designer&Developer" content="楊軒羽 Shen Yang | Graphic Web Designer & Front-end Developer | 前端設計工程師">
 	<title>中研院近史所圖書館</title>
 	<link rel="stylesheet" href="css/uikit.min.css">
-	<link rel="stylesheet" href="css/tailwind.min.css">
+	<link rel="stylesheet" href="css/tailwind.css">
 	<link rel="stylesheet" href="css/fontawesome.min.css">
-	<link rel="stylesheet" href="css/main.min.css">
-	<link rel="stylesheet" href="css/colors.min.css">
-	<link rel="stylesheet" href="css/style.min.css">
-	<link rel="stylesheet" href="css/editor.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/colors.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/editor.css">
 	<script src="js/uikit-icons.min.js"></script>
 	<script src="js/uikit.min.js"></script>
-	<script src="js/script.min.js" defer></script>
+	<script src="js/script.js" defer></script>
 </head>
 
 <body id="top" class="page">
@@ -204,9 +204,13 @@
 	        <ul class="m-0 px-2 s:p-0 uk-float-left uk-breadcrumb">
 	        	<li><a class="text-xs m:text-sm" href="index.html">首頁</a></li>
 	        			<li><a class="text-xs m:text-sm" href="#">我的圖書館</a></li>
-	        	<li><span class="text-xs m:text-sm">會員登入</span></li>
+	        	<li><span class="text-xs m:text-sm">新書通報訂閱管理</span></li>
 	        </ul>
 	        <!-- uk-breadcrumb -->      </div>
+	        <div class="text-xs m:text-sm content-center m-0">
+	          <span class="mr-2 uk-width-auto">帳號：陳大天</span>
+	          <a class="color_primary-text! uk-width-auto" href="index.html">登出</a>
+	        </div>
 	    </div>
 	    <!-- Breadcrumb & User -->
 	
@@ -214,38 +218,16 @@
 	      <a class="no-underline px-1 uk-position-absolute uk-visible@l" href="#C" id="AC" name="C" title="中央內容區塊" accesskey="C" style="left:-30px;top: -5px;">:::</a>
 	      <h2 class="btm_line text-base s:text-2xl mt-2 s:mt-0">
 	        <div class="uk-flex-middle uk-grid uk-grid-small uk-child-width-expand@m" uk-grid>
-	          <div class="uk-width-expand">會員登入</div>
+	          <div class="uk-width-expand">新書通報訂閱管理</div>
 	        </div>
 	      </h2>
 	        <div id="content">
-	          
-	          <form onsubmit="return false;">
-	          	<div class="uk-grid uk-grid-small uk-child-width-expand@s" uk-grid>
-	              <div class="space-y-1 min_width-1/2!@s">
-	                <label class="w-full" for="acc">帳 號</label>
-	                <input id="acc" class="uk-input" type="email" placeholder="">
-	                <p class="color_secondary-text uk-text-small">驗證提示語</p>
-	              </div>
-	              <div class="space-y-1 min_width-1/2!@s">
-	                <label class="w-full" for="paw">密 碼</label>
-	                <input id="paw" class="uk-input" type="password" placeholder="">
-	                <p class="color_secondary-text uk-text-small">驗證提示語</p>
-	              </div>
-	          		<div class="uk-width-1-1">
-	                <small class="mt-2"><i class="mr-1 fas fa-question-circle"></i>登入說明</small>
-	              </div>
-	              <div class="m:mt-2 mx-auto uk-width-1-1">
-	                <div class="uk-grid uk-grid-small uk-child-width-expand" uk-grid>
-	                  <div class="space-y-1 uk-text-nowrap">
-	                    <a href="#" class="btn_primary w-full uk-button uk-button-primary">登入</a>
-	                  </div>
-	                  <div class="space-y-1 uk-text-nowrap">
-	                    <a href="#" class="btn_primary w-full uk-button uk-button-primary">忘記密碼</a>
-	                  </div>
-	                </div>
-	              </div>
-	            </div>
-	          </form>        </div>
+	          <div class="uk-flex-center uk-flex-column uk-margin uk-grid-small uk-child-width-auto uk-grid" uk-grid>
+	          	<label class="text-center"><input class="mr-1 uk-checkbox" type="checkbox">中文新書通報</label>
+	          	<label class="text-center"><input class="mr-1 uk-checkbox" type="checkbox">西文新書通報</label>
+	          	<label class="text-center"><input class="mr-1 uk-checkbox" type="checkbox">日文新書通報</label>
+	          	<div class="mt-5 mx-auto uk-width-1-4@m"><a class="btn_primary w-full uk-button uk-button-primary" href="">儲存</a></div>
+	          </div>        </div>
 	      <!-- End #content -->
 	    </div>
 	    <!-- End uk-card -->

@@ -78,6 +78,7 @@ div.editor.table {
 
   .editor table {
     width: 100%;
+    word-break: break-all;
   }
 }
 
@@ -156,7 +157,7 @@ div.editor.table {
 
 .editor ul,
 .editor ol {
-  padding-left: 35px;
+  padding-left: 20px;
   list-style-position: inside;
 }
 
@@ -254,22 +255,22 @@ div.editor.table {
 }
 
 .editor h1, .editor .h1 {
-  font-size: calc(36rem/18);
+  font-size: calc(36rem/18) !important;
 }
 .editor h2, .editor .h2 {
-  font-size: calc(32rem/18);
+  font-size: calc(32rem/18) !important;
 }
 .editor h3, .editor .h3 {
-  font-size: calc(27rem/18);
+  font-size: calc(24.75rem/18) !important;
 }
 .editor h4, .editor .h4 {
-  font-size: calc(22.5rem/18);
+  font-size: calc(22.5rem/18) !important;
 }
 .editor h5, .editor .h5 {
-  font-size: calc(18rem/18);
+  font-size: calc(18rem/18) !important;
 }
 .editor h6, .editor .h6 {
-  font-size: calc(15.75rem/18);
+  font-size: calc(15.75rem/18) !important;
 }
 
 .editor img, .editor a, .editor span, .editor label, .editor strong, .editor small {

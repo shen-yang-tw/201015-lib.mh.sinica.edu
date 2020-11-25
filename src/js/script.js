@@ -482,6 +482,48 @@ function checkedSum(inputCheck, checkAll, resetButton, textSum) {
 
 //------------- End Form ------------------------------------------------//
 
+//------------- Table in editor ------------------------------------------------//
+//Table width in editor
+function tableWidth(el) {
+  var target = document.querySelectorAll(el)
+  if (window.innerWidth <= 959 || document.documentElement.clientWidth <= 959) {
+    for (var i = 0; i < target.length; i++) {
+      target[i].style.setProperty('width', '100%', 'important')
+      if (target[i].getAttribute('width') != null) {
+        target[i].setAttribute('width', 'auto')
+      }
+      var th = target[i].querySelectorAll('th')
+      var td = target[i].querySelectorAll('td')
+      for (var j = 0; j < th.length; j++) {
+        if (th[j].style.width != null) {
+          th[j].style.setProperty('width', 'auto', 'important')
+        }
+        if (th[j].getAttribute('width') != null) {
+          th[j].setAttribute('width', 'auto')
+        }
+      }
+      for (var k = 0; k < td.length; k++) {
+        if (td[k].style.width != null) {
+          td[k].style.setProperty('width', 'auto')
+        }
+        if (td[k].getAttribute('width') != null) {
+          td[k].setAttribute('width', 'auto')
+        }
+      }
+    }
+  } else {
+    for (var i = 0; i < target.length; i++) {
+      if (target[i].getAttribute('width') >= target[i].parentElement.offsetWidth) {
+        target[i].setAttribute('width', 'auto')
+      }
+    }
+  }
+}
+if (oneExist('.editor table')) {
+  tableWidth('.editor table')
+}
+//------------- End Table in editor ------------------------------------------------//
+
 //Slideshow tab focus
 function slideShowFocus(slideshow, tabsArray, thisFocus) {
   var slideshow = document.querySelector(slideshow)

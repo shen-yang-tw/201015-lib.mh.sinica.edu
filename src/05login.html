@@ -67,7 +67,7 @@
 										</ul>
 									</div>
 								</div>
-								<button class="min_width-30! color_primary px-0 uk-flex uk-flex-right uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle="target: #offcanvas"></button>
+								<button class="min_width-30! color_primary px-0 uk-flex uk-flex-right uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle="target: #offcanvas"><span class="sr-only"></span></button>
 							</div>
 						</div>
 					</div>
@@ -151,7 +151,7 @@
 		<!-- uk-offcanvas -->
 		<div id="offcanvas" uk-offcanvas>
 			<div class="bg_primary py-5 uk-offcanvas-bar">
-				<button class="uk-offcanvas-close" type="button" title="刪除" uk-close></button>
+				<button class="uk-offcanvas-close" type="button" title="刪除" uk-close><span class="sr-only">關閉選單</span></button>
 				<ul class="uk-nav uk-nav-default uk-nav-parent-icon text-white" uk-nav="multiple: true">
 					<li><a href="#">Level1</a></li>
 					<li class="uk-parent">
@@ -218,8 +218,9 @@
 	        </div>
 	      </h2>
 	        <div id="content">
+	          
 	          <form onsubmit="return false;">
-	            <div class="uk-grid uk-grid-small uk-child-width-expand@s" uk-grid>
+	          	<div class="uk-grid uk-grid-small uk-child-width-expand@s" uk-grid>
 	              <div class="space-y-1 min_width-1/2!@s">
 	                <label class="w-full" for="acc">帳 號</label>
 	                <input id="acc" class="uk-input" type="email" placeholder="">
@@ -230,15 +231,15 @@
 	                <input id="paw" class="uk-input" type="password" placeholder="">
 	                <p class="color_secondary-text uk-text-small">驗證提示語</p>
 	              </div>
-	              <div class="uk-width-1-1">
+	          		<div class="uk-width-1-1">
 	                <small class="mt-2"><i class="mr-1 fas fa-question-circle"></i>登入說明</small>
 	              </div>
 	              <div class="m:mt-2 mx-auto uk-width-1-1">
 	                <div class="uk-grid uk-grid-small uk-child-width-expand" uk-grid>
-	                  <div class="space-y-1 min_width-150@s">
+	                  <div class="space-y-1 uk-text-nowrap">
 	                    <a href="#" class="btn_primary w-full uk-button uk-button-primary">登入</a>
 	                  </div>
-	                  <div class="space-y-1 min_width-150@s">
+	                  <div class="space-y-1 uk-text-nowrap">
 	                    <a href="#" class="btn_primary w-full uk-button uk-button-primary">忘記密碼</a>
 	                  </div>
 	                </div>
