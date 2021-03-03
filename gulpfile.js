@@ -6,7 +6,7 @@ const uglify = require('gulp-uglify-es').default;
 const rename = require('gulp-rename');
 const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
-const imageMin = require('gulp-imagemin');
+const imagemin = require('gulp-imagemin');
 const pngQuint = require('imagemin-pngquant');
 const browserSync = require('browser-sync').create();
 const gulpautoprefixer = require('gulp-autoprefixer');
@@ -496,13 +496,24 @@ gulp.task('js', function() {
 // Compress (JPEG, PNG, GIF, SVG, JPG)
 gulp.task('img', function() {
   return gulp.src(paths.src.img)
-    .pipe(imageMin([
-      imageMin.gifsicle(),
-      imageMin.mozjpeg(),
-      imageMin.optipng(),
-      imageMin.svgo(),
-      pngQuint(),
-      jpgRecompress()
+    // .pipe(imageMin([
+    //   imageMin.gifsicle(),
+    //   imageMin.mozjpeg(),
+    //   imageMin.optipng(),
+    //   imageMin.svgo(),
+    //   pngQuint(),
+    //   jpgRecompress()
+    // ]))
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.mozjpeg({quality: 75, progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      // imagemin.svgo({
+      //     plugins: [
+      //         {removeViewBox: false},
+      //         {cleanupIDs: false}
+      //     ]
+      // })
     ]))
     .pipe(gulp.dest(paths.dist.root + paths.dist.img));
 });
@@ -565,9 +576,9 @@ gulp.task('start', gulp.series('vendors', 'delhtml', 'templates', 'sass', 'js', 
 gulp.task('server', gulp.series('vendors', 'templates', 'sass', 'js', 'inject', 'watch'));
 
 //3. Prepare all assets for production, run: 'yarn build-nohtml' or 'yarn build'
-gulp.task('build-nohtml', gulp.series('vendors', 'tocss', 'js', 'img'));
-gulp.task('build-purge', gulp.series('dist', 'clean', 'vendors', 'delhtml', 'templates', 'tocss', 'js', 'img', 'build-inject'));
-gulp.task('build', gulp.series('dist', 'clean', 'vendors', 'delhtml', 'templates', 'tocss', 'js', 'img', 'inject', 'build-inject'));
+gulp.task('build-nohtml', gulp.series('vendors', 'js', 'tocss', 'img'));
+gulp.task('build-purge', gulp.series('dist', 'clean', 'vendors', 'delhtml', 'templates', 'js', 'tocss', 'img', 'build-inject'));
+gulp.task('build', gulp.series('dist', 'clean', 'vendors', 'delhtml', 'templates', 'js', 'tocss', 'img', 'inject', 'build-inject'));
 
 //--- 0.First run: 'gulp start'
 //--- 1.For development run: 'gulp server' or 'yarn server'

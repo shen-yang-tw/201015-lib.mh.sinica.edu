@@ -58,14 +58,6 @@
   .ckeditor table[border]:not([border="0"]):not(.uk-table) {
     border: none !important;
   }
-  .ckeditor table:not(.scroll_table):not(.uk-table) *:not([class*=fa]) {
-    width: auto !important;
-    height: auto !important;
-    max-width: none !important;
-    min-width: 0 !important;
-    overflow: visible !important;
-    white-space: normal !important;
-  }
   .ckeditor table[border]:not([border="0"]):not(.uk-table) td {
     border: none;
     border-bottom: 1px solid black;

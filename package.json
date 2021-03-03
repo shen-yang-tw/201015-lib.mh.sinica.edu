@@ -1,7 +1,7 @@
 {
   "name": "201015-lib.mh.sinica.edu",
   "version": "1.0.0",
-  "description": "Using Gulp pack the website with Uikit, Fontawesome, Tailwindcss, and Handlebars",
+  "description": "Using NVM Node:12.11.1 and Gulp pack the website with Uikit, Fontawesome, Tailwindcss, and Handlebars",
   "main": "gulpfile.js",
   "author": "Shen Yang",
   "license": "MIT",
