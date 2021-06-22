@@ -1,5 +1,18 @@
 @import 'functions', 'variables', 'colors-variables', 'color', 'mixin';
 
+ol, ul {
+  padding-left: 30px;
+}
+ol {
+  list-style-type: decimal;
+}
+ul {
+  list-style-type: disc;
+}
+ul ul {
+  list-style-type: circle;
+}
+
 body {background-color: #FEFDF9;}
 
 // .logo {
